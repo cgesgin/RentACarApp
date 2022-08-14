@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace RentACar.Core.UnitOfWorks
 {
-    internal interface IUnitOfWork
+    public interface IUnitOfWork
     {
+        Task CommitAsync();
+        void Commit();
     }
 }
