@@ -8,8 +8,8 @@ namespace RentACar.Core
 {
     public abstract class BaseEntity
     {
-        public int id { get; set; }
-        public bool ? isDeleted { get; set; }
+        public int Id { get; set; }
+        public bool ? IsDeleted { get; set; }
 
     }
 }
