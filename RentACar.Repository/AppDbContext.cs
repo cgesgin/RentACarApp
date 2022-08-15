@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using RentACar.Core;
+using RentACar.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

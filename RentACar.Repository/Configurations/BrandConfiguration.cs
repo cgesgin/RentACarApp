@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using RentACar.Core;
+using RentACar.Core.Models;
 
 namespace RentACar.Repository.Configurations
 {

@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACar.Core
+namespace RentACar.Core.Models
 {
-    public class District : BaseEntity
+    public class Model : BaseEntity
     {
         public string? Name { get; set; }
-        public int CityId { get; set; }
-        public City? City { get; set; }
+        public int BrandId { get; set; }
+        public Brand? Brand { get; set; }
+
     }
 }

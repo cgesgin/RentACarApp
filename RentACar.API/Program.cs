@@ -5,6 +5,8 @@ using RentACar.Core.UnitOfWorks;
 using RentACar.Repository;
 using RentACar.Repository.Repositories;
 using RentACar.Repository.UnitOfWorks;
+using RentACar.Service.Mapping;
+using RentACar.Service.Services;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,11 +18,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
+//Add Project DI
 builder.Services.AddScoped<IUnitOfWork,UnitOfWorkImp>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositoryImp<>));
-//builder.Services.AddScoped(typeof(IService<>), typeof(ServiceImp<>);
-
+builder.Services.AddScoped(typeof(IService<>), typeof(ServiceImp<>));
+builder.Services.AddAutoMapper(typeof(MapProfile));
 //Connection Database
 var SqlCon = builder.Configuration.GetConnectionString("SqlCon");
 builder.Services.AddDbContext<AppDbContext>(

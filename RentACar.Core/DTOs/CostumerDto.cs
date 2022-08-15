@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACar.Core
+namespace RentACar.Core.DTOs
 {
-    public class Costumer : BaseEntity
+    public class CostumerDto : BaseDto
     {
         public string? Name { get; set; }
         public string? LastName { get; set; }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACar.Core
+namespace RentACar.Core.Models
 {
     public class Rental : BaseEntity
     {
@@ -17,7 +17,7 @@ namespace RentACar.Core
         public int? CarId { get; set; }
         public Car? Car { get; set; }
         public int? DropStoreId { get; set; }
-        
+
         [ForeignKey("DropStoreId")]
         public RentalStore? DropStore { get; set; }
         public int? RentalAmount { get; set; }

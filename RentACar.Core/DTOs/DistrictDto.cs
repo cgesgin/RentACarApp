@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACar.Core
+namespace RentACar.Core.DTOs
 {
-    public  class Model : BaseEntity
+    public class DistrictDto : BaseDto
     {
         public string? Name { get; set; }
-        public int BrandId { get; set; }
-        public Brand? Brand { get; set; }
-
+        public int CityId { get; set; }
     }
 }

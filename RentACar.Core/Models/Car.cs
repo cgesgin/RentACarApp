@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACar.Core
+namespace RentACar.Core.Models
 {
     public class Car : BaseEntity
     {
@@ -25,8 +25,5 @@ namespace RentACar.Core
         public int? ModelId { get; set; }
         public Model? Model { get; set; }
         public string? ImageName { get; set; }
-        [NotMapped]
-        [DisplayName("Upload File")]
-        public IFormFile? ImageFile { get; set; }
     }
 }

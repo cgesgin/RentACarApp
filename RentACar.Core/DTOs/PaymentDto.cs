@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACar.Core
+namespace RentACar.Core.DTOs
 {
-    public class Payment : BaseEntity
+    public class PaymentDto : BaseDto
     {
         public int CardNo { get; set; }
         public string? CardName { get; set; }
@@ -14,6 +14,5 @@ namespace RentACar.Core
         public DateTime ExpriyDate { get; set; }
         public int Amount { get; set; }
         public int RentalId { get; set; }
-        public Rental? Rentals { get; set; }
     }
 }

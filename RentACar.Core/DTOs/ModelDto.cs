@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACar.Core
+namespace RentACar.Core.DTOs
 {
-    public class CarType : BaseEntity
+    public class ModelDto : BaseDto
     {
         public string? Name { get; set; }
-        public List<Car>? Car { get; set; }
+        public int BrandId { get; set; }
     }
 }

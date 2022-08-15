@@ -46,3 +46,5 @@ C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\RentACar.Co
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\RentACar.Repository.pdb
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\Humanizer.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
