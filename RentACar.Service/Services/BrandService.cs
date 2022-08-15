@@ -1,0 +1,33 @@
+﻿using AutoMapper;
+using RentACar.Core.DTOs;
+using RentACar.Core.Models;
+using RentACar.Core.Repositories;
+using RentACar.Core.Services;
+using RentACar.Core.UnitOfWorks;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RentACar.Service.Services
+{
+    public class BrandService : Service<Brand>, IBrandService
+    {
+        private readonly IBrandRepository _brandRepository;
+        private readonly IMapper _mapper;
+
+        public BrandService(IGenericRepository<Brand> repository, IUnitOfWork unitOfWork, IMapper mapper, IBrandRepository brandRepository) : base(repository, unitOfWork)
+        {
+            _mapper = mapper; 
+            _brandRepository = brandRepository;
+        }
+
+        public async Task<ResponseDto<BrandWithModelsDto>> GetByIdBrandWithModelsAsync(int brandId)
+        {
+            var brand = await _brandRepository.GetByIdBrandWithModelsAsync(brandId);
+            var brandDto = _mapper.Map<BrandWithModelsDto>(brand);
+            return ResponseDto<BrandWithModelsDto>.Success(200, brandDto);
+        }
+    }
+}

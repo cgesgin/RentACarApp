@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace RentACar.Repository.Repositories
 {
-    public class GenericRepositoryImp<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         protected readonly AppDbContext _appDbContext;
         private readonly DbSet<T> _dbSet;
 
-        public GenericRepositoryImp(AppDbContext appDbContext)
+        public GenericRepository(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
             _dbSet = _appDbContext.Set<T>();

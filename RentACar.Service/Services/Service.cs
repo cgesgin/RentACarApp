@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace RentACar.Service.Services
 {
-    public class ServiceImp<T> : IService<T> where T : class
+    public class Service<T> : IService<T> where T : class
     {
         private readonly IGenericRepository<T> _repository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public ServiceImp(IGenericRepository<T> repository, IUnitOfWork unitOfWork)
+        public Service(IGenericRepository<T> repository, IUnitOfWork unitOfWork)
         {
             _repository = repository;
             _unitOfWork = unitOfWork;

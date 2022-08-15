@@ -25,6 +25,8 @@ namespace RentACar.Service.Mapping
             CreateMap<Payment,PaymentDto>().ReverseMap();
             CreateMap<Rental,RentalDto>().ReverseMap();
             CreateMap<RentalStore,RentalStoreDto>().ReverseMap();
+            CreateMap<Model, ModelWithBrandDto>().ReverseMap();
+            CreateMap<Brand, BrandWithModelsDto>().ReverseMap();
         }
     }
 }

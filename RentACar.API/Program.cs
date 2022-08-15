@@ -20,9 +20,15 @@ builder.Services.AddSwaggerGen();
 
 //Add Project DI
 builder.Services.AddScoped<IUnitOfWork,UnitOfWorkImp>();
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositoryImp<>));
-builder.Services.AddScoped(typeof(IService<>), typeof(ServiceImp<>));
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
 builder.Services.AddAutoMapper(typeof(MapProfile));
+
+builder.Services.AddScoped<IModelRepository, ModelRepository>();
+builder.Services.AddScoped<IModelService,ModelService>();
+builder.Services.AddScoped<IBrandRepository, BrandRepositoy>();
+builder.Services.AddScoped<IBrandService, BrandService>();
+builder.Services.AddScoped<IBrandService, BrandService>();
 //Connection Database
 var SqlCon = builder.Configuration.GetConnectionString("SqlCon");
 builder.Services.AddDbContext<AppDbContext>(
