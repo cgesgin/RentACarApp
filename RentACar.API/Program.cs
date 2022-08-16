@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using RentACar.Core.Repositories;
 using RentACar.Core.Services;
@@ -7,6 +8,7 @@ using RentACar.Repository.Repositories;
 using RentACar.Repository.UnitOfWorks;
 using RentACar.Service.Mapping;
 using RentACar.Service.Services;
+using RentACar.Service.Validations;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +19,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//Add Validation
+
+builder.Services.AddControllers().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<CostumerDtoValidator>());
 
 //Add Project DI
 builder.Services.AddScoped<IUnitOfWork,UnitOfWorkImp>();
