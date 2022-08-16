@@ -1,5 +1,7 @@
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using RentACar.API.Filters;
 using RentACar.Core.Repositories;
 using RentACar.Core.Services;
 using RentACar.Core.UnitOfWorks;
@@ -22,8 +24,12 @@ builder.Services.AddSwaggerGen();
 
 //Add Validation
 
-builder.Services.AddControllers().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<CostumerDtoValidator>());
+builder.Services.AddControllers(options => { options.Filters.Add(new ValidateFilterAttribute()); }).AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<CostumerDtoValidator>());
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
 
+});
 //Add Project DI
 builder.Services.AddScoped<IUnitOfWork,UnitOfWorkImp>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
