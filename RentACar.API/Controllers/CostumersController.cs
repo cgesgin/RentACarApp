@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RentACar.API.Filters;
 using RentACar.Core.DTOs;
 using RentACar.Core.Models;
 using RentACar.Core.Services;
@@ -41,12 +42,14 @@ namespace RentACar.API.Controllers
             var costumersDto = _mapper.Map<CostumerDto>(costumer);
             return CreateActionResult(ResponseDto<CostumerDto>.Success(201, costumersDto));
         }
-        [HttpPut]
-        public async Task<IActionResult> Update(CostumerDto costumerDto)
+        [ServiceFilter(typeof(NotFoundFilter<Costumer>))]
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id,CostumerDto costumerDto)
         {
             await _service.UpdateAsync(_mapper.Map<Costumer>(costumerDto));
             return CreateActionResult(ResponseDto<NoContentDto>.Success(204));
         }
+        [ServiceFilter(typeof(NotFoundFilter<Costumer>))]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Remove(int id)
         {
