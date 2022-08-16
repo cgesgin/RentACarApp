@@ -4,7 +4,7 @@ using RentACar.Core.DTOs;
 namespace RentACar.API.Controllers
 {
 
-    public class CostumBaseController : ControllerBase
+    public class CustomBaseController : ControllerBase
     {
         [NonAction]
         public IActionResult CreateActionResult<T>(ResponseDto<T> response)

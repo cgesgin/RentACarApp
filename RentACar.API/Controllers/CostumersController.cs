@@ -9,7 +9,7 @@ namespace RentACar.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CostumersController : CostumBaseController
+    public class CostumersController : CustomBaseController
     {
         private readonly IMapper _mapper;
         private readonly IService<Costumer> _service;

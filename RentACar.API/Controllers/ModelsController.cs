@@ -9,7 +9,7 @@ namespace RentACar.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ModelsController : CostumBaseController
+    public class ModelsController : CustomBaseController
     {
         private readonly IMapper _mapper;
         private readonly IModelService _service;
@@ -54,7 +54,7 @@ namespace RentACar.API.Controllers
             await _service.RemoveAsync(carModel);
             return CreateActionResult(ResponseDto<NoContentDto>.Success(204));
         }
-        [HttpGet("[action]")]// [HttpGet("[action]/{id}")]
+        [HttpGet("[action]")]
         public async Task<IActionResult> GetModelWithBrand() 
         {
             return CreateActionResult(await _service.GetModelsWithBrandAsync());

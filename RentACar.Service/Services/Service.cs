@@ -2,6 +2,7 @@
 using RentACar.Core.Repositories;
 using RentACar.Core.Services;
 using RentACar.Core.UnitOfWorks;
+using RentACar.Service.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +49,12 @@ namespace RentACar.Service.Services
 
         public async Task<T> GetByIdAsync(int id)
         {
-            return await _repository.GetByIdAsync(id);
+            var entity = await _repository.GetByIdAsync(id);
+            if (entity==null)
+            {
+                throw new NotFoundExcepiton($"{typeof(T).Name}({id}) not found");
+            }
+            return entity;
         }
 
         public async Task RemoveAsync(T entity)
