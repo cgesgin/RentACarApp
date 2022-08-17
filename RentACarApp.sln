@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Core", "RentACar.Core\RentACar.Core.csproj", "{673B195A-642E-49F0-B265-8C94A6B582E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.Core", "RentACar.Core\RentACar.Core.csproj", "{673B195A-642E-49F0-B265-8C94A6B582E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Repository", "RentACar.Repository\RentACar.Repository.csproj", "{21A7D7EB-B38D-4C4B-8283-AE878989827D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.Repository", "RentACar.Repository\RentACar.Repository.csproj", "{21A7D7EB-B38D-4C4B-8283-AE878989827D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Service", "RentACar.Service\RentACar.Service.csproj", "{25427769-BE59-40BD-9597-E072E907DC48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.Service", "RentACar.Service\RentACar.Service.csproj", "{25427769-BE59-40BD-9597-E072E907DC48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.API", "RentACar.API\RentACar.API.csproj", "{8D4EC48E-6EAA-4692-B5D0-02FC6B40DDA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.API", "RentACar.API\RentACar.API.csproj", "{8D4EC48E-6EAA-4692-B5D0-02FC6B40DDA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Caching", "RentACar.Caching\RentACar.Caching.csproj", "{C7EBFAF6-19C3-49C8-BADC-7480CB8FF807}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8D4EC48E-6EAA-4692-B5D0-02FC6B40DDA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D4EC48E-6EAA-4692-B5D0-02FC6B40DDA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D4EC48E-6EAA-4692-B5D0-02FC6B40DDA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7EBFAF6-19C3-49C8-BADC-7480CB8FF807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7EBFAF6-19C3-49C8-BADC-7480CB8FF807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7EBFAF6-19C3-49C8-BADC-7480CB8FF807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7EBFAF6-19C3-49C8-BADC-7480CB8FF807}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

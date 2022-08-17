@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RentACar.Service\RentACar.Service.csproj" />
+    <ProjectReference Include="..\RentACar.Caching\RentACar.Caching.csproj" />
   </ItemGroup>
 
 </Project>

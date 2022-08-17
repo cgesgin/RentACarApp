@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using RentACar.Caching;
 using RentACar.Core.Repositories;
 using RentACar.Core.Services;
 using RentACar.Core.UnitOfWorks;
@@ -37,6 +38,9 @@ namespace RentACar.API.Modules
                 .Where(x => x.Name.EndsWith("Service"))
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
+
+           // Open The Caching
+           // builder.RegisterType<CostumerServiceWithCaching>().As<ICostumerService>();
 
             base.Load(builder);
         }

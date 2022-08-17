@@ -26,6 +26,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Add InMemoryCache
+builder.Services.AddMemoryCache();
+
 // Add Filter
 builder.Services.AddScoped(typeof(NotFoundFilter<>));
 

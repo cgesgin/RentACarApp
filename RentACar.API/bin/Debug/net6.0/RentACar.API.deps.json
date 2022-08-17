@@ -10,7 +10,7 @@
         "dependencies": {
           "Autofac.Extensions.DependencyInjection": "8.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.8",
-          "RentACar.Service": "1.0.0",
+          "RentACar.Caching": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -378,6 +378,14 @@
       },
       "System.IO.Pipelines/5.0.2": {},
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
+      "RentACar.Caching/1.0.0": {
+        "dependencies": {
+          "RentACar.Service": "1.0.0"
+        },
+        "runtime": {
+          "RentACar.Caching.dll": {}
+        }
+      },
       "RentACar.Core/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "5.0.17"
@@ -723,6 +731,11 @@
       "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    },
+    "RentACar.Caching/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "RentACar.Core/1.0.0": {
       "type": "project",

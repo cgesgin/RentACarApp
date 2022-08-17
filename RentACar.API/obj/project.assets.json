@@ -575,6 +575,19 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "RentACar.Caching/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "RentACar.Service": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RentACar.Caching.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RentACar.Caching.dll": {}
+        }
+      },
       "RentACar.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1674,6 +1687,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "RentACar.Caching/1.0.0": {
+      "type": "project",
+      "path": "../RentACar.Caching/RentACar.Caching.csproj",
+      "msbuildProject": "../RentACar.Caching/RentACar.Caching.csproj"
+    },
     "RentACar.Core/1.0.0": {
       "type": "project",
       "path": "../RentACar.Core/RentACar.Core.csproj",
@@ -1694,7 +1712,7 @@
     "net6.0": [
       "Autofac.Extensions.DependencyInjection >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.8",
-      "RentACar.Service >= 1.0.0",
+      "RentACar.Caching >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -1725,8 +1743,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Service\\RentACar.Service.csproj": {
-              "projectPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Service\\RentACar.Service.csproj"
+            "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Caching\\RentACar.Caching.csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Caching\\RentACar.Caching.csproj"
             }
           }
         }

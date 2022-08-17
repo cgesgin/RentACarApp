@@ -53,3 +53,5 @@ C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\FluentValid
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\Autofac.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\RentACar.Caching.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\RentACar.Caching.pdb
