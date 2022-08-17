@@ -6,14 +6,9 @@ using Microsoft.EntityFrameworkCore;
 using RentACar.API.Filters;
 using RentACar.API.Middlewares;
 using RentACar.API.Modules;
-using RentACar.Core.Repositories;
-using RentACar.Core.Services;
-using RentACar.Core.UnitOfWorks;
+using RentACar.Redis;
 using RentACar.Repository;
-using RentACar.Repository.Repositories;
-using RentACar.Repository.UnitOfWorks;
 using RentACar.Service.Mapping;
-using RentACar.Service.Services;
 using RentACar.Service.Validations;
 using System.Reflection;
 
@@ -28,6 +23,9 @@ builder.Services.AddSwaggerGen();
 
 //Add InMemoryCache
 builder.Services.AddMemoryCache();
+
+//Add Redis
+builder.Services.AddSingleton<RedisService>();
 
 // Add Filter
 builder.Services.AddScoped(typeof(NotFoundFilter<>));
@@ -59,7 +57,7 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new RepoServiceModule()));
 
 var app = builder.Build();
-
+var redisService = app.Services.GetService<RedisService>();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -73,6 +71,8 @@ app.UseHttpsRedirection();
 app.UseCustomException();
 
 app.UseAuthorization();
+
+redisService.Connect();
 
 app.MapControllers();
 

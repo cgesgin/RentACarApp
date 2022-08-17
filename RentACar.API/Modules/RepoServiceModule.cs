@@ -3,6 +3,7 @@ using RentACar.Caching;
 using RentACar.Core.Repositories;
 using RentACar.Core.Services;
 using RentACar.Core.UnitOfWorks;
+using RentACar.Redis.CachingModels;
 using RentACar.Repository;
 using RentACar.Repository.Repositories;
 using RentACar.Repository.UnitOfWorks;
@@ -39,8 +40,11 @@ namespace RentACar.API.Modules
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
 
-           // Open The Caching
-           // builder.RegisterType<CostumerServiceWithCaching>().As<ICostumerService>();
+            // Open The Caching
+            // builder.RegisterType<CostumerServiceWithCaching>().As<ICostumerService>();
+
+            // Open The Redis
+             builder.RegisterType<CostumerServiceWithRedis>().As<ICostumerService>();
 
             base.Load(builder);
         }

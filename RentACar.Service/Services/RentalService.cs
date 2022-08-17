@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace RentACar.Service.Services
 {
-    public class RentalService : Service<Rental> , IRentalService
+    public class RentalService : Service<Rental> , IRedisService
     {
         private readonly IRentalRepository _rentalRepository;
         private readonly IMapper _mapper;
