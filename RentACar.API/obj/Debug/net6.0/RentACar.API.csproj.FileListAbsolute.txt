@@ -51,3 +51,5 @@ C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\AutoMapper.
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\Autofac.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll

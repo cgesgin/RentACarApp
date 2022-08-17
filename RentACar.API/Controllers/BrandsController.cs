@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RentACar.API.Filters;
 using RentACar.Core.DTOs;
 using RentACar.Core.Models;
 using RentACar.Core.Services;
@@ -19,7 +20,7 @@ namespace RentACar.API.Controllers
             _mapper = mapper;
             _service = service;
         }
-
+        
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -41,6 +42,7 @@ namespace RentACar.API.Controllers
             var brandsDto = _mapper.Map<BrandDto>(brand);
             return CreateActionResult(ResponseDto<BrandDto>.Success(201, brandsDto));
         }
+        [ServiceFilter(typeof(NotFoundFilter<Brand>))]
         [HttpPut]
         public async Task<IActionResult> Update(BrandDto brandDto)
         {

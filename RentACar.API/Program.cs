@@ -1,8 +1,11 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RentACar.API.Filters;
 using RentACar.API.Middlewares;
+using RentACar.API.Modules;
 using RentACar.Core.Repositories;
 using RentACar.Core.Services;
 using RentACar.Core.UnitOfWorks;
@@ -34,17 +37,10 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
     options.SuppressModelStateInvalidFilter = true;
 
 });
-//Add Project DI
-builder.Services.AddScoped<IUnitOfWork,UnitOfWorkImp>();
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
+//Add Project DI 
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
-builder.Services.AddScoped<IModelRepository, ModelRepository>();
-builder.Services.AddScoped<IModelService,ModelService>();
-builder.Services.AddScoped<IBrandRepository, BrandRepositoy>();
-builder.Services.AddScoped<IBrandService, BrandService>();
-builder.Services.AddScoped<IBrandService, BrandService>();
+
 //Connection Database
 var SqlCon = builder.Configuration.GetConnectionString("SqlCon");
 builder.Services.AddDbContext<AppDbContext>(
@@ -55,7 +51,9 @@ builder.Services.AddDbContext<AppDbContext>(
             x.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
         })
     );
-
+//Autofac Ioc container
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new RepoServiceModule()));
 
 var app = builder.Build();
 

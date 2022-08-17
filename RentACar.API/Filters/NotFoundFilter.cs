@@ -32,27 +32,6 @@ namespace RentACar.API.Filters
 
             }
             await next();
-            /*
-
-            var idValue = context.ActionArguments.Values.FirstOrDefault();
-
-            if (idValue == null)
-            {
-                await next.Invoke();
-                return;
-            }
-
-            var id = (int)idValue;
-            var anyEntity = await _service.AnyAsync(x => x.Id == id);
-
-            if (anyEntity)
-            {
-                await next.Invoke();
-                return;
-            }
-
-            context.Result = new NotFoundObjectResult(ResponseDto<NoContentDto>.Fail(404, $"{typeof(T).Name}({id}) not found"));
-            */
         }
     }
 }

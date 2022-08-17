@@ -13,9 +13,9 @@ namespace RentACar.API.Controllers
     public class CostumersController : CustomBaseController
     {
         private readonly IMapper _mapper;
-        private readonly IService<Costumer> _service;
+        private readonly ICostumerService _service;
 
-        public CostumersController(IMapper mapper, IService<Costumer> service)
+        public CostumersController(IMapper mapper, ICostumerService service)
         {
             _mapper = mapper;
             _service = service;
@@ -42,9 +42,9 @@ namespace RentACar.API.Controllers
             var costumersDto = _mapper.Map<CostumerDto>(costumer);
             return CreateActionResult(ResponseDto<CostumerDto>.Success(201, costumersDto));
         }
-        [ServiceFilter(typeof(NotFoundFilter<Costumer>))]
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id,CostumerDto costumerDto)
+       
+        [HttpPut]
+        public async Task<IActionResult> Update(CostumerDto costumerDto)
         {
             await _service.UpdateAsync(_mapper.Map<Costumer>(costumerDto));
             return CreateActionResult(ResponseDto<NoContentDto>.Success(204));
