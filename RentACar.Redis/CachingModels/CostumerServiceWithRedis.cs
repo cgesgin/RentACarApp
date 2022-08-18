@@ -13,10 +13,10 @@ namespace RentACar.Redis.CachingModels
     {
         private const string CachingCostumerKey = "costumers";
         private readonly IMapper _mapper;
-        private readonly RedisService _cache;
+        private readonly RedisConnectionService _cache;
         private readonly ICostumerRepository _repository;
         private readonly IUnitOfWork _unitOfWork;
-        public CostumerServiceWithRedis(IMapper mapper, RedisService cache, ICostumerRepository repository, IUnitOfWork unitOfWork)
+        public CostumerServiceWithRedis(IMapper mapper, RedisConnectionService cache, ICostumerRepository repository, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
             _cache = cache;
@@ -95,7 +95,7 @@ namespace RentACar.Redis.CachingModels
         {
             return GetCacheData().Where(expression.Compile()).AsQueryable();
         }
-        public List<Costumer> GetCacheData() 
+        private List<Costumer> GetCacheData() 
         {
             List<Costumer> list = new List<Costumer>();
 
@@ -106,7 +106,7 @@ namespace RentACar.Redis.CachingModels
             });
             return list;
         }
-        public void CallAllCache()
+        private void CallAllCache()
         {
             if (_cache.GetDb(0).KeyExists(CachingCostumerKey))
             {
@@ -118,7 +118,7 @@ namespace RentACar.Redis.CachingModels
                 _cache.GetDb(0).KeyExpire(CachingCostumerKey, DateTime.Now.AddMinutes(1));
             }
         }
-        public void AddCache()
+        private void AddCache()
         {
             if (!_cache.GetDb(0).KeyExists(CachingCostumerKey))
             {

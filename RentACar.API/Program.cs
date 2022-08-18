@@ -25,7 +25,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddMemoryCache();
 
 //Add Redis
-builder.Services.AddSingleton<RedisService>();
+builder.Services.AddSingleton<RedisConnectionService>();
 
 // Add Filter
 builder.Services.AddScoped(typeof(NotFoundFilter<>));
@@ -57,7 +57,7 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new RepoServiceModule()));
 
 var app = builder.Build();
-var redisService = app.Services.GetService<RedisService>();
+var redisService = app.Services.GetService<RedisConnectionService>();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
