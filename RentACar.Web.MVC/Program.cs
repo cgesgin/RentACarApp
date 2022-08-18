@@ -16,7 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<CostumerDtoValidator>());
 
 //Add InMemoryCache
-builder.Services.AddMemoryCache()
+builder.Services.AddMemoryCache();
 
 //Add Redis
 builder.Services.AddSingleton<RedisConnectionService>();
