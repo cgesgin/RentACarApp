@@ -12,9 +12,11 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+//Add FluentValidation
+builder.Services.AddControllersWithViews().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<CostumerDtoValidator>());
+
 //Add InMemoryCache
-builder.Services.AddMemoryCache();
+builder.Services.AddMemoryCache()
 
 //Add Redis
 builder.Services.AddSingleton<RedisConnectionService>();
