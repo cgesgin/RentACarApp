@@ -15,6 +15,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\User\source\repos\RentACarApp\RentACar.Web.MVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/User/source/repos/RentACarApp/RentACar.Web.MVC/Views/Costumers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29zdHVtZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/RentACarApp/RentACar.Web.MVC/Views/Costumers/Save.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29zdHVtZXJzXFNhdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/RentACarApp/RentACar.Web.MVC/Views/Costumers/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29zdHVtZXJzXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/source/repos/RentACarApp/RentACar.Web.MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

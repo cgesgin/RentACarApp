@@ -6,6 +6,7 @@ using RentACar.Redis;
 using RentACar.Repository;
 using RentACar.Service.Mapping;
 using RentACar.Service.Validations;
+using RentACar.Web.MVC.Filters;
 using RentACar.Web.MVC.Modules;
 using System.Reflection;
 
@@ -23,6 +24,9 @@ builder.Services.AddSingleton<RedisConnectionService>();
 
 //Add Project DI 
 builder.Services.AddAutoMapper(typeof(MapProfile));
+
+//Add Filter
+builder.Services.AddScoped(typeof(NotFoundFilter<>));
 
 //Connection Database
 var SqlCon = builder.Configuration.GetConnectionString("SqlCon");
@@ -43,9 +47,10 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerB
 var app = builder.Build();
 var redisService = app.Services.GetService<RedisConnectionService>();
 // Configure the HTTP request pipeline.
+
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Errors/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
