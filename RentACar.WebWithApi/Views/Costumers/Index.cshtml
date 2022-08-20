@@ -1,0 +1,39 @@
+﻿@model IEnumerable<RentACar.Core.DTOs.CostumerDto>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Index</h1>
+<div>
+    <a asp-action="Save" asp-controller="Costumers" class="btn btn-info">Create New Costumer</a>
+</div>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>LastName</td>
+            <td>Phone</td>
+            <td>Email</td>
+            <td>LisanceNo</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.LastName</td>
+                <td>@item.Phone</td>
+                <td>@item.Email</td>
+                <td>@item.LisanceNo</td>
+                <td>
+                    <a asp-action="Update" asp-controller="Costumers" asp-route-id="@item.Id" class="btn btn-success">Update</a>
+                    <a asp-action="Remove" asp-controller="Costumers" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

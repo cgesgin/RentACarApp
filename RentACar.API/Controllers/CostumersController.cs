@@ -27,6 +27,7 @@ namespace RentACar.API.Controllers
             var costumersDtos = _mapper.Map<List<CostumerDto>>(costumers.ToList());
             return CreateActionResult(ResponseDto<List<CostumerDto>>.Success(200, costumersDtos));
         }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -34,6 +35,7 @@ namespace RentACar.API.Controllers
             var costumerDto = _mapper.Map<CostumerDto>(costumer);
             return CreateActionResult(ResponseDto<CostumerDto>.Success(200, costumerDto));
         }
+
         [HttpPost]
         public async Task<IActionResult> Save(CostumerDto costumerDto)
         {
@@ -48,6 +50,7 @@ namespace RentACar.API.Controllers
             await _service.UpdateAsync(_mapper.Map<Costumer>(costumerDto));
             return CreateActionResult(ResponseDto<NoContentDto>.Success(204));
         }
+
         [ServiceFilter(typeof(NotFoundFilter<Costumer>))]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Remove(int id)

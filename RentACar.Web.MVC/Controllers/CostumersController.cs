@@ -55,7 +55,7 @@ namespace RentACar.Web.MVC.Controllers
         }
         public async Task<IActionResult> Remove(int id)
         {
-            var costumer = await _service.GetByIdAsync(id);
+            var costumer = await _service.GetByIdAsync(id); 
             await _service.RemoveAsync(costumer);
             return RedirectToAction(nameof(Index));
         }

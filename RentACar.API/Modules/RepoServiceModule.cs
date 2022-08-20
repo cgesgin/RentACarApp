@@ -41,7 +41,7 @@ namespace RentACar.API.Modules
                 .InstancePerLifetimeScope();
 
             // Open The Caching
-            // builder.RegisterType<CostumerServiceWithCaching>().As<ICostumerService>();
+             builder.RegisterType<CostumerServiceWithCaching>().As<ICostumerService>();
 
             // Open The Redis
             // builder.RegisterType<CostumerServiceWithRedis>().As<ICostumerService>();
