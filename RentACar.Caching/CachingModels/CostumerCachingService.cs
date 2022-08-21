@@ -12,9 +12,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RentACar.Caching
+namespace RentACar.Caching.CachingModels
 {
-    public class CostumerServiceWithCaching : ICostumerService
+    public class CostumerCachingService : ICostumerService
     {
         private const string CachingCostumerKey = "costumers";
         private readonly IMapper _mapper;
@@ -22,15 +22,15 @@ namespace RentACar.Caching
         private readonly ICostumerRepository _repository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public CostumerServiceWithCaching(IMapper mapper, IMemoryCache memoryCache, ICostumerRepository repository, IUnitOfWork unitOfWork)
+        public CostumerCachingService(IMapper mapper, IMemoryCache memoryCache, ICostumerRepository repository, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
             _memoryCache = memoryCache;
             _repository = repository;
             _unitOfWork = unitOfWork;
-            if (!_memoryCache.TryGetValue(CachingCostumerKey,out _)) 
+            if (!_memoryCache.TryGetValue(CachingCostumerKey, out _))
             {
-                _memoryCache.Set(CachingCostumerKey, _repository.GetAll().ToList()) ;
+                _memoryCache.Set(CachingCostumerKey, _repository.GetAll().ToList());
             }
         }
 

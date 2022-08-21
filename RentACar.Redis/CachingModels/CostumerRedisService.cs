@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿    using AutoMapper;
 using RentACar.Core.Models;
 using RentACar.Core.Repositories;
 using RentACar.Core.Services;
@@ -9,14 +9,14 @@ using System.Text.Json;
 
 namespace RentACar.Redis.CachingModels
 {
-    public class CostumerServiceWithRedis : ICostumerService
+    public class CostumerRedisService : ICostumerService
     {
         private const string CachingCostumerKey = "costumers";
         private readonly IMapper _mapper;
         private readonly RedisConnectionService _cache;
         private readonly ICostumerRepository _repository;
         private readonly IUnitOfWork _unitOfWork;
-        public CostumerServiceWithRedis(IMapper mapper, RedisConnectionService cache, ICostumerRepository repository, IUnitOfWork unitOfWork)
+        public CostumerRedisService(IMapper mapper, RedisConnectionService cache, ICostumerRepository repository, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
             _cache = cache;

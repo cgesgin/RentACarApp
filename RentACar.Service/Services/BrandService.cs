@@ -4,6 +4,7 @@ using RentACar.Core.Models;
 using RentACar.Core.Repositories;
 using RentACar.Core.Services;
 using RentACar.Core.UnitOfWorks;
+using RentACar.Repository;
 using RentACar.Service.Exceptions;
 using System;
 using System.Collections.Generic;
@@ -31,18 +32,5 @@ namespace RentACar.Service.Services
             var brandDto = _mapper.Map<BrandWithModelsDto>(brand);
             return ResponseDto<BrandWithModelsDto>.Success(200, brandDto);
         }
-        
-        public async Task UpdateAsync(Brand entity)
-        {
-            var obj = await _brandRepository.GetByIdAsync(entity.Id);
-            if (obj == null)
-            {
-                throw new NotFoundExcepiton($"{typeof(Brand).Name}({entity.Id}) not found");
-            }
-            _brandRepository.Update(entity);
-            await _unitOfWork.CommitAsync();
-        }
-
-
     }
 }

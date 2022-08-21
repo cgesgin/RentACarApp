@@ -19,6 +19,7 @@ namespace RentACar.WebWithApi.Controllers
             var costumers = await _apiService.GetAllAsync<ModelWithBrandDto>("Models/GetModelWithBrand");
             return View(costumers);
         }
+
         public async Task<IActionResult> Save()
         {
             var brands = await _apiService.GetAllAsync<BrandDto>("Brands");

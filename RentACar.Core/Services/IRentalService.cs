@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RentACar.Core.Services
 {
-    public interface IRedisService : IService<Rental>
+    public interface IRentalService : IService<Rental>
     {
     }
 }

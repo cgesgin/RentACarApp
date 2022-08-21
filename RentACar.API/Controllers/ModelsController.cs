@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RentACar.API.Filters;
 using RentACar.Core.DTOs;
 using RentACar.Core.Models;
 using RentACar.Core.Services;
@@ -44,7 +45,8 @@ namespace RentACar.API.Controllers
         [HttpPut]
         public async Task<IActionResult> Update(ModelDto carModelDto)
         {
-            await _service.UpdateAsync(_mapper.Map<Model>(carModelDto));
+            var carModel = _mapper.Map<Model>(carModelDto);
+            await _service.UpdateAsync(carModel);
             return CreateActionResult(ResponseDto<NoContentDto>.Success(204));
         }
         [HttpDelete("{id}")]
@@ -54,6 +56,7 @@ namespace RentACar.API.Controllers
             await _service.RemoveAsync(carModel);
             return CreateActionResult(ResponseDto<NoContentDto>.Success(204));
         }
+        [ServiceFilter(typeof(NotFoundFilter<Model>))]
         [HttpGet("[action]")]
         public async Task<IActionResult> GetModelWithBrand() 
         {

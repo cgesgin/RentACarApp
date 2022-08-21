@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using RentACar.Caching;
+using RentACar.Caching.CachingModels;
 using RentACar.Core.Repositories;
 using RentACar.Core.Services;
 using RentACar.Core.UnitOfWorks;
@@ -7,7 +7,7 @@ using RentACar.Redis.CachingModels;
 using RentACar.Repository;
 using RentACar.Repository.Repositories;
 using RentACar.Repository.UnitOfWorks;
-using RentACar.Service.Services; 
+using RentACar.Service.Services;
 using System.Reflection;
 
 namespace RentACar.API.Modules
@@ -41,10 +41,10 @@ namespace RentACar.API.Modules
                 .InstancePerLifetimeScope();
 
             // Open The Caching
-             builder.RegisterType<CostumerServiceWithCaching>().As<ICostumerService>();
+            //builder.RegisterType<CostumerCachingService>().As<ICostumerService>();
 
             // Open The Redis
-            // builder.RegisterType<CostumerServiceWithRedis>().As<ICostumerService>();
+            //builder.RegisterType<CostumerRedisService>().As<ICostumerService>();
 
             base.Load(builder);
         }
