@@ -9,5 +9,6 @@ namespace RentACar.Core.Repositories
 {
     public interface IAddressRepository : IGenericRepository<Address>
     {
+        Task<List<Address>> GetAddressWithDistrictAsync();
     }
 }

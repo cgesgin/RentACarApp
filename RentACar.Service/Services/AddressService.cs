@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using RentACar.Core.DTOs;
 using RentACar.Core.Models;
 using RentACar.Core.Repositories;
 using RentACar.Core.Services;
@@ -13,13 +14,18 @@ namespace RentACar.Service.Services
 {
     public class AddressService : Service<Address>, IAddressService
     {
-        private readonly IModelRepository _modelRepository;
+        private readonly IAddressRepository _addressRepository;
         private readonly IMapper _mapper;
 
-        public AddressService(IGenericRepository<Address> repository, IUnitOfWork unitOfWork, IModelRepository modelRepository, IMapper mapper) : base(repository, unitOfWork)
+        public AddressService(IGenericRepository<Address> repository, IUnitOfWork unitOfWork, IAddressRepository addressRepository, IMapper mapper) : base(repository, unitOfWork)
         {
-            _modelRepository = modelRepository;
+            _addressRepository = addressRepository;
             _mapper = mapper;
+        }
+
+        public async Task<List<Address>> GetAddressWithDistrictAsync()
+        {
+            return await _addressRepository.GetAddressWithDistrictAsync();
         }
     }
 }

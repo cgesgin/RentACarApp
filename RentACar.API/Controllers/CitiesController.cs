@@ -9,12 +9,12 @@ namespace RentACar.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CitysController : CustomBaseController
+    public class CitiesController : CustomBaseController
     {
         private readonly IMapper _mapper;
         private readonly ICityService _service;
 
-        public CitysController(IMapper mapper, ICityService service)
+        public CitiesController(IMapper mapper, ICityService service)
         {
             _mapper = mapper;
             _service = service;

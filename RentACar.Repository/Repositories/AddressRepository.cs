@@ -1,4 +1,5 @@
-﻿using RentACar.Core.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using RentACar.Core.Models;
 using RentACar.Core.Repositories;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,11 @@ namespace RentACar.Repository.Repositories
     {
         public AddressRepository(AppDbContext appDbContext) : base(appDbContext)
         {
+        }
+
+        public async Task<List<Address>> GetAddressWithDistrictAsync()
+        {
+            return await _appDbContext.Addresses.Include(x => x.District).OrderBy(x=>x.Id).ToListAsync();
         }
     }
 }

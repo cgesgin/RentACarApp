@@ -9,5 +9,6 @@ namespace RentACar.Core.Services
 {
     public interface IAddressService : IService<Address>
     {
+        Task<List<Address>> GetAddressWithDistrictAsync();
     }
 }

@@ -62,5 +62,12 @@ namespace RentACar.API.Controllers
             await _service.RemoveAsync(address);
             return CreateActionResult(ResponseDto<NoContentDto>.Success(204));
         }
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetAddressWithDistrict()
+        {
+            var addresses = await _service.GetAddressWithDistrictAsync();
+            var addressesDtos = _mapper.Map<List<AddressWithDistrictDto>>(addresses.ToList());
+            return CreateActionResult(ResponseDto<List<AddressWithDistrictDto>>.Success(200, addressesDtos));
+        }
     }
 }

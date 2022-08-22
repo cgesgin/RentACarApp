@@ -1,0 +1,40 @@
+﻿@model IEnumerable<RentACar.Core.DTOs.AddressWithDistrictDto>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Index</h1>
+<div>
+    <a asp-action="Save" asp-controller="Addresses" class="btn btn-info">Create</a>
+</div>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Street</td>
+            <td>Neighbourhood</td>
+            <td>description</td>
+            <td>Zipcode</td>
+            <td>District</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Street</td>
+                <td>@item.Neighbourhood</td>
+                <td>@item.description</td>
+                <td>@item.Zipcode</td>
+                <td>@item.District.Name</td>
+                <td>
+                    <a asp-action="Update" asp-controller="Addresses" asp-route-id="@item.Id" class="btn btn-success">Update</a>
+                    <a asp-action="Remove" asp-controller="Addresses" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

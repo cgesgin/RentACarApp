@@ -1,0 +1,32 @@
+﻿@model IEnumerable<RentACar.Core.DTOs.BrandDto>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Index</h1>
+<div>
+    <a asp-action="Save" asp-controller="Brands" class="btn btn-info">Create</a>
+</div>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>
+                    <a asp-action="Update" asp-controller="Brands" asp-route-id="@item.Id" class="btn btn-success">Update</a>
+                    <a asp-action="Remove" asp-controller="Brands" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
