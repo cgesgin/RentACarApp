@@ -5,6 +5,7 @@ using RentACar.Core.Models;
 using RentACar.Core.Repositories;
 using RentACar.Core.Services;
 using RentACar.Core.UnitOfWorks;
+using RentACar.Service.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,11 +64,21 @@ namespace RentACar.Caching.CachingModels
 
         public Task<Costumer> GetByIdAsync(int id)
         {
-            return Task.FromResult(_memoryCache.Get<List<Costumer>>(CachingCostumerKey).FirstOrDefault(x => x.Id == id));
+            var Isthere =  _memoryCache.Get<List<Costumer>>(CachingCostumerKey).FirstOrDefault(x => x.Id == id);
+            if (Isthere == null)
+            {
+                throw new NotFoundExcepiton($"{typeof(Costumer).Name} data not found");
+            }
+            return Task.FromResult(Isthere);
         }
 
         public async Task RemoveAsync(Costumer entity)
         {
+            var Isthere = await _repository.AnyAsync(x => x.Id == entity.Id);
+            if (!Isthere)
+            {
+                throw new NotFoundExcepiton($"{typeof(Costumer).Name} data not found");
+            }
             _repository.Remove(entity);
             await _unitOfWork.CommitAsync();
             await CacheAllAsync();
@@ -82,6 +93,11 @@ namespace RentACar.Caching.CachingModels
 
         public async Task UpdateAsync(Costumer entity)
         {
+            var Isthere = await _repository.AnyAsync(x=>x.Id==entity.Id);
+            if (!Isthere)
+            {
+                throw new NotFoundExcepiton($"{typeof(Costumer).Name} data not found");
+            }
             _repository.Update(entity);
             await _unitOfWork.CommitAsync();
             await CacheAllAsync();
