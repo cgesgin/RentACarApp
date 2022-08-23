@@ -110,6 +110,7 @@ namespace RentACar.Redis.CachingModels
         {
             if (_cache.GetDb(0).KeyExists(CachingCostumerKey))
             {
+                _cache.GetDb(0).KeyDelete(CachingCostumerKey);
                 foreach (var item in _repository.GetAll().ToList())
                 {
                     string jsonEntities = JsonSerializer.Serialize(item);
@@ -124,7 +125,6 @@ namespace RentACar.Redis.CachingModels
             {
                 foreach (var item in _repository.GetAll().ToList())
                 {
-
                     string jsonEntities = JsonSerializer.Serialize(item);
                     _cache.GetDb(0).ListRightPush(CachingCostumerKey, jsonEntities);
                 }
