@@ -39,7 +39,12 @@ namespace RentACar.Service.Services
 
         public async Task<bool> AnyAsync(Expression<Func<T, bool>> expression)
         {
-            return await _repository.AnyAsync(expression);
+            var entity = await _repository.AnyAsync(expression);
+            if (!entity)
+            {
+                throw new NotFoundExcepiton($"{typeof(T).Name} data not found");
+            }
+            return entity;
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()

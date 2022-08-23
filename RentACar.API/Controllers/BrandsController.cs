@@ -28,7 +28,7 @@ namespace RentACar.API.Controllers
             var brandsDtos = _mapper.Map<List<BrandDto>>(brands.ToList());
             return CreateActionResult(ResponseDto<List<BrandDto>>.Success(200, brandsDtos));
         }
-        [ServiceFilter(typeof(NotFoundFilter<Brand>))]
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -46,11 +46,12 @@ namespace RentACar.API.Controllers
         [HttpPut]
         public async Task<IActionResult> Update(BrandDto brandDto)
         {
+            await _service.AnyAsync(x => x.Id == brandDto.Id);
             var brands = _mapper.Map<Brand>(brandDto);
             await _service.UpdateAsync(brands);
             return CreateActionResult(ResponseDto<NoContentDto>.Success(204));
         }
-        [ServiceFilter(typeof(NotFoundFilter<Brand>))]
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> Remove(int id)
         {
