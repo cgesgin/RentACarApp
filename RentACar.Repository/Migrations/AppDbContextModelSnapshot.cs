@@ -212,7 +212,7 @@ namespace RentACar.Repository.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("RentACar.Core.Address", b =>
+            modelBuilder.Entity("RentACar.Core.Models.Address", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -243,7 +243,7 @@ namespace RentACar.Repository.Migrations
                     b.ToTable("Addresses");
                 });
 
-            modelBuilder.Entity("RentACar.Core.Brand", b =>
+            modelBuilder.Entity("RentACar.Core.Models.Brand", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -279,7 +279,7 @@ namespace RentACar.Repository.Migrations
                         });
                 });
 
-            modelBuilder.Entity("RentACar.Core.Car", b =>
+            modelBuilder.Entity("RentACar.Core.Models.Car", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -331,7 +331,7 @@ namespace RentACar.Repository.Migrations
                     b.ToTable("Cars");
                 });
 
-            modelBuilder.Entity("RentACar.Core.CarDetails", b =>
+            modelBuilder.Entity("RentACar.Core.Models.CarDetails", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -351,7 +351,7 @@ namespace RentACar.Repository.Migrations
                     b.ToTable("CarDetails");
                 });
 
-            modelBuilder.Entity("RentACar.Core.CarType", b =>
+            modelBuilder.Entity("RentACar.Core.Models.CarType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -368,7 +368,7 @@ namespace RentACar.Repository.Migrations
                     b.ToTable("CarTypes");
                 });
 
-            modelBuilder.Entity("RentACar.Core.City", b =>
+            modelBuilder.Entity("RentACar.Core.Models.City", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -385,7 +385,7 @@ namespace RentACar.Repository.Migrations
                     b.ToTable("Cities");
                 });
 
-            modelBuilder.Entity("RentACar.Core.Costumer", b =>
+            modelBuilder.Entity("RentACar.Core.Models.Costumer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -417,7 +417,7 @@ namespace RentACar.Repository.Migrations
                     b.ToTable("Costumers");
                 });
 
-            modelBuilder.Entity("RentACar.Core.District", b =>
+            modelBuilder.Entity("RentACar.Core.Models.District", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -439,7 +439,7 @@ namespace RentACar.Repository.Migrations
                     b.ToTable("Districts");
                 });
 
-            modelBuilder.Entity("RentACar.Core.Model", b =>
+            modelBuilder.Entity("RentACar.Core.Models.Model", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -495,7 +495,7 @@ namespace RentACar.Repository.Migrations
                         });
                 });
 
-            modelBuilder.Entity("RentACar.Core.Payment", b =>
+            modelBuilder.Entity("RentACar.Core.Models.Payment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -529,7 +529,7 @@ namespace RentACar.Repository.Migrations
                     b.ToTable("Payments");
                 });
 
-            modelBuilder.Entity("RentACar.Core.Rental", b =>
+            modelBuilder.Entity("RentACar.Core.Models.Rental", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -573,7 +573,7 @@ namespace RentACar.Repository.Migrations
                     b.ToTable("Rentals");
                 });
 
-            modelBuilder.Entity("RentACar.Core.RentalStore", b =>
+            modelBuilder.Entity("RentACar.Core.Models.RentalStore", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -652,9 +652,9 @@ namespace RentACar.Repository.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("RentACar.Core.Address", b =>
+            modelBuilder.Entity("RentACar.Core.Models.Address", b =>
                 {
-                    b.HasOne("RentACar.Core.District", "District")
+                    b.HasOne("RentACar.Core.Models.District", "District")
                         .WithMany()
                         .HasForeignKey("DistrictId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -663,21 +663,21 @@ namespace RentACar.Repository.Migrations
                     b.Navigation("District");
                 });
 
-            modelBuilder.Entity("RentACar.Core.Car", b =>
+            modelBuilder.Entity("RentACar.Core.Models.Car", b =>
                 {
-                    b.HasOne("RentACar.Core.CarDetails", "CarDetails")
+                    b.HasOne("RentACar.Core.Models.CarDetails", "CarDetails")
                         .WithMany()
                         .HasForeignKey("CarDetailsId");
 
-                    b.HasOne("RentACar.Core.CarType", "CarType")
+                    b.HasOne("RentACar.Core.Models.CarType", "CarType")
                         .WithMany("Car")
                         .HasForeignKey("CarTypeId");
 
-                    b.HasOne("RentACar.Core.Model", "Model")
+                    b.HasOne("RentACar.Core.Models.Model", "Model")
                         .WithMany()
                         .HasForeignKey("ModelId");
 
-                    b.HasOne("RentACar.Core.RentalStore", "RentalStore")
+                    b.HasOne("RentACar.Core.Models.RentalStore", "RentalStore")
                         .WithMany("Cars")
                         .HasForeignKey("RentalStoreId");
 
@@ -690,9 +690,9 @@ namespace RentACar.Repository.Migrations
                     b.Navigation("RentalStore");
                 });
 
-            modelBuilder.Entity("RentACar.Core.District", b =>
+            modelBuilder.Entity("RentACar.Core.Models.District", b =>
                 {
-                    b.HasOne("RentACar.Core.City", "City")
+                    b.HasOne("RentACar.Core.Models.City", "City")
                         .WithMany("Districts")
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -701,9 +701,9 @@ namespace RentACar.Repository.Migrations
                     b.Navigation("City");
                 });
 
-            modelBuilder.Entity("RentACar.Core.Model", b =>
+            modelBuilder.Entity("RentACar.Core.Models.Model", b =>
                 {
-                    b.HasOne("RentACar.Core.Brand", "Brand")
+                    b.HasOne("RentACar.Core.Models.Brand", "Brand")
                         .WithMany("Models")
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -712,9 +712,9 @@ namespace RentACar.Repository.Migrations
                     b.Navigation("Brand");
                 });
 
-            modelBuilder.Entity("RentACar.Core.Payment", b =>
+            modelBuilder.Entity("RentACar.Core.Models.Payment", b =>
                 {
-                    b.HasOne("RentACar.Core.Rental", "Rentals")
+                    b.HasOne("RentACar.Core.Models.Rental", "Rentals")
                         .WithMany()
                         .HasForeignKey("RentalId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -723,17 +723,17 @@ namespace RentACar.Repository.Migrations
                     b.Navigation("Rentals");
                 });
 
-            modelBuilder.Entity("RentACar.Core.Rental", b =>
+            modelBuilder.Entity("RentACar.Core.Models.Rental", b =>
                 {
-                    b.HasOne("RentACar.Core.Car", "Car")
+                    b.HasOne("RentACar.Core.Models.Car", "Car")
                         .WithMany()
                         .HasForeignKey("CarId");
 
-                    b.HasOne("RentACar.Core.Costumer", "Costumer")
+                    b.HasOne("RentACar.Core.Models.Costumer", "Costumer")
                         .WithMany()
                         .HasForeignKey("CostumerId");
 
-                    b.HasOne("RentACar.Core.RentalStore", "DropStore")
+                    b.HasOne("RentACar.Core.Models.RentalStore", "DropStore")
                         .WithMany()
                         .HasForeignKey("DropStoreId");
 
@@ -744,9 +744,9 @@ namespace RentACar.Repository.Migrations
                     b.Navigation("DropStore");
                 });
 
-            modelBuilder.Entity("RentACar.Core.RentalStore", b =>
+            modelBuilder.Entity("RentACar.Core.Models.RentalStore", b =>
                 {
-                    b.HasOne("RentACar.Core.Address", "Address")
+                    b.HasOne("RentACar.Core.Models.Address", "Address")
                         .WithMany()
                         .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -755,22 +755,22 @@ namespace RentACar.Repository.Migrations
                     b.Navigation("Address");
                 });
 
-            modelBuilder.Entity("RentACar.Core.Brand", b =>
+            modelBuilder.Entity("RentACar.Core.Models.Brand", b =>
                 {
                     b.Navigation("Models");
                 });
 
-            modelBuilder.Entity("RentACar.Core.CarType", b =>
+            modelBuilder.Entity("RentACar.Core.Models.CarType", b =>
                 {
                     b.Navigation("Car");
                 });
 
-            modelBuilder.Entity("RentACar.Core.City", b =>
+            modelBuilder.Entity("RentACar.Core.Models.City", b =>
                 {
                     b.Navigation("Districts");
                 });
 
-            modelBuilder.Entity("RentACar.Core.RentalStore", b =>
+            modelBuilder.Entity("RentACar.Core.Models.RentalStore", b =>
                 {
                     b.Navigation("Cars");
                 });

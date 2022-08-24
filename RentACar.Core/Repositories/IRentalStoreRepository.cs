@@ -9,5 +9,7 @@ namespace RentACar.Core.Repositories
 {
     public interface IRentalStoreRepository : IGenericRepository<RentalStore>
     {
+        Task<List<RentalStore>> GetRentalStoreWithAddressAsync();
+        Task<RentalStore> GetByIdRentalStoreWithAddressAsync(int id);
     }
 }

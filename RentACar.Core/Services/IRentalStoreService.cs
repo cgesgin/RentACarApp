@@ -9,5 +9,7 @@ namespace RentACar.Core.Services
 {
     public interface IRentalStoreService : IService<RentalStore>
     {
+        Task<List<RentalStore>> GetRentalStoreWithAddressAsync();
+        Task<RentalStore> GetByIdRentalStoreWithAddressAsync(int id);
     }
 }

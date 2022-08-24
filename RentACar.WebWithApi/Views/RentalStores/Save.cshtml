@@ -1,0 +1,56 @@
+﻿@model RentACar.Core.DTOs.RentalStoreWithAddressDto
+@{
+    ViewData["Title"] = "Save";
+}
+<h1>Save Page</h1>
+<div class="row">
+    <form asp-action="Save" method="post" asp-controller="RentalStores">
+        <div class="col-md-6">
+            <h1>Add Store</h1>
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phone"></label>
+                <input asp-for="phone" class="form-control" />
+                <span asp-validation-for="phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <h3>Address</h3>
+            <div class="form-group">
+                <label asp-for="Address.Street"></label>
+                <input asp-for="Address.Street" class="form-control" />
+                <span asp-validation-for="Address.Street" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Neighbourhood"></label>
+                <input asp-for="Address.Neighbourhood" class="form-control" />
+                <span asp-validation-for="Address.Neighbourhood" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.Zipcode"></label>
+                <input asp-for="Address.Zipcode" class="form-control" />
+                <span asp-validation-for="Address.Zipcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.description"></label>
+                <input asp-for="Address.description" class="form-control" />
+                <span asp-validation-for="Address.description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address.DistrictId"></label>
+                <select asp-for="Address.DistrictId" asp-items="ViewBag.districts" class="form-control"></select>
+                <span asp-validation-for="Address.DistrictId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+</div>

@@ -39,6 +39,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRzXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/User/source/repos/RentACarApp/RentACar.WebWithApi/Views/CarDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyRGV0YWlsc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/RentACarApp/RentACar.WebWithApi/Views/CarDetails/Save.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyRGV0YWlsc1xTYXZlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/RentACarApp/RentACar.WebWithApi/Views/CarDetails/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyRGV0YWlsc1xVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/RentACarApp/RentACar.WebWithApi/Views/CarTypes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyVHlwZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/RentACarApp/RentACar.WebWithApi/Views/CarTypes/Save.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyVHlwZXNcU2F2ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/RentACarApp/RentACar.WebWithApi/Views/CarTypes/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyVHlwZXNcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/source/repos/RentACarApp/RentACar.WebWithApi/Views/Cities/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0aWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -81,6 +105,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/User/source/repos/RentACarApp/RentACar.WebWithApi/Views/Models/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kZWxzXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/RentACarApp/RentACar.WebWithApi/Views/RentalStores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsU3RvcmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/RentACarApp/RentACar.WebWithApi/Views/RentalStores/Save.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsU3RvcmVzXFNhdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/source/repos/RentACarApp/RentACar.WebWithApi/Views/RentalStores/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVudGFsU3RvcmVzXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/source/repos/RentACarApp/RentACar.WebWithApi/Views/Shared/Error.cshtml]

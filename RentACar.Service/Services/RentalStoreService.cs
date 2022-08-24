@@ -21,5 +21,15 @@ namespace RentACar.Service.Services
             _rentalStoreRepository = rentalStoreRepository;
             _mapper = mapper;
         }
+
+        public Task<RentalStore> GetByIdRentalStoreWithAddressAsync(int id)
+        {
+            return _rentalStoreRepository.GetByIdRentalStoreWithAddressAsync(id);
+        }
+
+        public Task<List<RentalStore>> GetRentalStoreWithAddressAsync()
+        {
+            return _rentalStoreRepository.GetRentalStoreWithAddressAsync();
+        }
     }
 }

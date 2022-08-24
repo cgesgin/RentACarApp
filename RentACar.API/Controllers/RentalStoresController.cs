@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RentACar.API.Filters;
 using RentACar.Core.DTOs;
 using RentACar.Core.Models;
 using RentACar.Core.Services;
@@ -58,6 +59,22 @@ namespace RentACar.API.Controllers
             var rentalStore = await _service.GetByIdAsync(id);
             await _service.RemoveAsync(rentalStore);
             return CreateActionResult(ResponseDto<NoContentDto>.Success(204));
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetRentalStoreWithAddress()
+        {
+            var rentalStores = await _service.GetRentalStoreWithAddressAsync();
+            var rentalStoreDtos = _mapper.Map<List<RentalStoreWithAddressDto>>(rentalStores.ToList());
+            return CreateActionResult(ResponseDto<List<RentalStoreWithAddressDto>>.Success(200, rentalStoreDtos));
+        }
+        [ServiceFilter(typeof(NotFoundFilter<RentalStore>))]
+        [HttpGet("[action]/{id}")]
+        public async Task<IActionResult> GetByIdRentalStoreWithAddressAsync(int id)
+        {
+            var rentalStores = await _service.GetByIdRentalStoreWithAddressAsync(id);
+            var rentalStoreDtos = _mapper.Map<RentalStoreWithAddressDto>(rentalStores);
+            return CreateActionResult(ResponseDto<RentalStoreWithAddressDto>.Success(200, rentalStoreDtos));
         }
     }
 }
