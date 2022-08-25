@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RentACar.API.Filters;
 using RentACar.Core.DTOs;
 using RentACar.Core.Models;
 using RentACar.Core.Services;
@@ -57,6 +58,22 @@ namespace RentACar.API.Controllers
             var car = await _service.GetByIdAsync(id);
             await _service.RemoveAsync(car);
             return CreateActionResult(ResponseDto<NoContentDto>.Success(204));
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetCarWithFeature()
+        {
+            var cars = await _service.GetCarWithFeatureAsync();
+            var carsDtos = _mapper.Map<List<CarWithFeatureDto>>(cars.ToList());
+            return CreateActionResult(ResponseDto<List<CarWithFeatureDto>>.Success(200, carsDtos));
+        }
+        [ServiceFilter(typeof(NotFoundFilter<Car>))]
+        [HttpGet("[action]/{id}")]
+        public async Task<IActionResult> GetByIdCarWithFeature(int id)
+        {
+            var cars = await _service.GetByIdCarWithFeatureAsync(id);
+            var carsDtos = _mapper.Map<CarWithFeatureDto>(cars);
+            return CreateActionResult(ResponseDto<CarWithFeatureDto>.Success(200, carsDtos));
         }
     }
 }

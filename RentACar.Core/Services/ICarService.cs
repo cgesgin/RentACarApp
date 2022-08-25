@@ -9,5 +9,7 @@ namespace RentACar.Core.Services
 {
     public interface ICarService : IService<Car>
     {
+        Task<List<Car>> GetCarWithFeatureAsync();
+        Task<Car> GetByIdCarWithFeatureAsync(int id);
     }
 }

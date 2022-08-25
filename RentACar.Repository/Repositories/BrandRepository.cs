@@ -17,7 +17,7 @@ namespace RentACar.Repository.Repositories
 
         public async Task<Brand> GetByIdBrandWithModelsAsync(int brandId)
         {
-            return await _appDbContext.Brands.Include(x => x.Models).Where(x => x.Id == brandId).SingleOrDefaultAsync();
+            return await _appDbContext.Brands.Include(x => x.Models).Where(x => x.Id == brandId).OrderBy(x=>x.Id).SingleOrDefaultAsync();
         }
     }
 }

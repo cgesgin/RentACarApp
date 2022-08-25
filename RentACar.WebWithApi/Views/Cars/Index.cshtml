@@ -1,0 +1,56 @@
+﻿@model IEnumerable<RentACar.Core.DTOs.CarWithFeatureDto>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Index</h1>
+<div>
+    <a asp-action="Save" asp-controller="Cars" class="btn btn-info">Create</a>
+</div>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>SeatCapacity</td>
+            <td>GearType</td>
+            <td>FuelType</td>
+            <td>CarType</td>
+            <td>Price</td>
+            <td>RentalStore</td>
+            <td>CarFeature</td>
+            <td>Model</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.SeatCapacity</td>
+                <td>@item.GearType</td>
+                <td>@item.FuelType</td>
+                <td>@item.CarType.Name</td>
+                <td>@item.Price</td>
+                <td>
+                    <ul>
+                        <li>Name  - @item.RentalStore.Name</li>
+                        <li>Phone - @item.RentalStore.phone</li>
+                        <li>Mail  - @item.RentalStore.Email</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>@item.CarDetails.CarYear</li>
+                        <li>@item.CarDetails.Color</li>
+                    </ul>
+                </td>
+                <td>@item.Model.Name - @item.Model.Brand.Name </td>
+                <td>
+                    <a asp-action="Update" asp-controller="Cars" asp-route-id="@item.Id" class="btn btn-success">Update</a>
+                    <a asp-action="Remove" asp-controller="Cars" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

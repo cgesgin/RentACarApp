@@ -29,6 +29,7 @@ namespace RentACar.Service.Mapping
             CreateMap<Brand, BrandWithModelsDto>().ReverseMap();
             CreateMap<Address, AddressWithDistrictDto>().ReverseMap();
             CreateMap<RentalStore, RentalStoreWithAddressDto>().ReverseMap();
+            CreateMap<Car, CarWithFeatureDto>().ReverseMap();
         }
     }
 }

@@ -21,5 +21,15 @@ namespace RentACar.Service.Services
             _carRepository = carRepository;
             _mapper = mapper;
         }
+
+        public Task<Car> GetByIdCarWithFeatureAsync(int id)
+        {
+            return _carRepository.GetByIdCarWithFeatureAsync(id);
+        }
+
+        public Task<List<Car>> GetCarWithFeatureAsync()
+        {
+            return _carRepository.GetCarWithFeatureAsync();
+        }
     }
 }

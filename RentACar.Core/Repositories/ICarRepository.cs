@@ -9,5 +9,7 @@ namespace RentACar.Core.Repositories
 {
     public interface ICarRepository : IGenericRepository<Car>
     {
+        Task<List<Car>> GetCarWithFeatureAsync();
+        Task<Car> GetByIdCarWithFeatureAsync(int id);
     }
 }

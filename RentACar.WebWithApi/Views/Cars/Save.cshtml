@@ -1,0 +1,64 @@
+﻿@model RentACar.Core.DTOs.CarWithFeatureDto
+@{
+    ViewData["Title"] = "Save";
+}
+<h1>Save</h1>
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Save" method="post" asp-controller="Cars">
+            <div class="form-group">
+                <label asp-for="SeatCapacity"></label>
+                <input asp-for="SeatCapacity" class="form-control"/>
+                <span asp-validation-for="SeatCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GearType"></label>
+                <input asp-for="GearType" class="form-control"/>
+                <span asp-validation-for="GearType" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="FuelType"></label>
+                <input asp-for="FuelType" class="form-control"/>
+                <span asp-validation-for="FuelType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarDetails.CarYear"></label>
+                <input asp-for="CarDetails.CarYear" class="form-control"/>
+                <span asp-validation-for="CarDetails.CarYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarDetails.Color"></label>
+                <input asp-for="CarDetails.Color" class="form-control"/>
+                <span asp-validation-for="CarDetails.Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status"></label>
+                <input asp-for="Status" class="form-control"/>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" class="form-control"/>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="CarTypeId"></label>
+                <select asp-for="CarTypeId" asp-items="ViewBag.carTypes" class="form-control"></select>
+                <span asp-validation-for="CarTypeId" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="RentalStoreId"></label>
+                <select asp-for="RentalStoreId" asp-items="ViewBag.rentalStores" class="form-control"></select>
+                <span asp-validation-for="RentalStoreId" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="ModelId"></label>
+                <select asp-for="ModelId" asp-items="ViewBag.models" class="form-control"></select>
+                <span asp-validation-for="ModelId" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
