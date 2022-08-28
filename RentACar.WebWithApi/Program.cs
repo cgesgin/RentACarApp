@@ -1,4 +1,7 @@
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using RentACar.Repository;
 using RentACar.Service.Validations;
 using RentACar.WebWithApi.Service;
 
@@ -11,6 +14,20 @@ builder.Services.AddControllersWithViews().AddFluentValidation(x => x.RegisterVa
 builder.Services.AddHttpClient<ApiService>(option =>
 {
     option.BaseAddress = new Uri(builder.Configuration["BaseUrl"]);
+});
+
+var SqlCon = builder.Configuration.GetConnectionString("SqlCon");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(SqlCon, ServerVersion.AutoDetect(SqlCon)));
+
+//Login Services
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+     .AddDefaultTokenProviders().AddDefaultUI()
+     .AddEntityFrameworkStores<AppDbContext>();
+//Login Services
+builder.Services.ConfigureApplicationCookie(config =>
+{
+    config.LoginPath = "/Users/Login";
+    config.AccessDeniedPath = new PathString("/Users/AccessDenied");
 });
 
 var app = builder.Build();
@@ -28,7 +45,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",

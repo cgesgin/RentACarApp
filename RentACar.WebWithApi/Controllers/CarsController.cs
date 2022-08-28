@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using RentACar.Core.DTOs;
 using RentACar.WebWithApi.Service;
@@ -20,7 +21,7 @@ namespace RentACar.WebWithApi.Controllers
             var cars = await _apiService.GetAllAsync<CarWithFeatureDto>("Cars/GetCarWithFeature");
             return View(cars);
         }
-
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Save()
         {
             var carTypes = await _apiService.GetAllAsync<CarTypeDto>("CarTypes");
@@ -34,7 +35,7 @@ namespace RentACar.WebWithApi.Controllers
 
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Save(CarWithFeatureDto carWithFeatureDto)
         {
@@ -56,7 +57,7 @@ namespace RentACar.WebWithApi.Controllers
             ViewBag.models = new SelectList(models, "Id", "Name");
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(int id)
         {
             var cars = await _apiService.GetByIdAsync<CarWithFeatureDto>($"Cars/GetByIdCarWithFeature/{id}");
@@ -72,7 +73,7 @@ namespace RentACar.WebWithApi.Controllers
 
             return View(cars);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Update(CarWithFeatureDto carWithFeatureDto)
         {
@@ -92,7 +93,7 @@ namespace RentACar.WebWithApi.Controllers
             ViewBag.models = new SelectList(models, "Id", "Name",carWithFeatureDto.ModelId);
             return View(carWithFeatureDto);
         }
-
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Remove(int id)
         {
             var cars = await _apiService.GetByIdAsync<CarDto>($"Cars/{id}");

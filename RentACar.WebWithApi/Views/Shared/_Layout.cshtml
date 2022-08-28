@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -25,6 +28,45 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cars" asp-action="Index">Cars</a>
+                        </li>
+                        @{
+                            if (SignInManager.IsSignedIn(User))
+                            {
+                                //menus to appear at the login entry
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action="Index">hello</a>
+                                </li>
+                                if (User.IsInRole("Admin"))
+                                {
+                                    //menus to appear at the Admin entry
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Addresses" asp-action="Index">Address</a>
+                                    </li>
+                                }
+                            }
+                            if (SignInManager.IsSignedIn(User))
+                            {
+                                <ul class="navbar-nav flex-grow-1 justify-content-end ">
+                                    <p>Hello @User.Identity.Name</p>
+                                    <li class="nav-item">
+                                        <a class="btn btn-primary" asp-area="" asp-controller="Users" asp-action="Logout">Logout</a>
+                                    </li>
+                                </ul>
+                            }
+                            else
+                            {
+                                <ul class="navbar-nav flex-grow-1 justify-content-end">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Register">Register</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Login">Login</a>
+                                    </li>
+                                </ul>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -41,7 +83,6 @@
             &copy; 2022 - RentACar.WebWithApi - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)

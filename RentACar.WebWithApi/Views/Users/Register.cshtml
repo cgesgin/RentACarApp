@@ -1,0 +1,25 @@
+﻿@model RentACar.Core.DTOs.UserDto
+
+<div class="container mt-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <h1>Register</h1>
+            <form method="post" asp-action="Register">
+                <div asp-validation-summary="All"></div>
+                <div class="mb-3">
+                    <label  class="form-label" asp-for="Email"></label>
+                    <input  type="text" class="form-control" asp-for="Email" >
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label  class="form-label" asp-for="Password"></label>
+                    <input  type="text" class="form-control" asp-for="Password" >
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                 <div class="mb-3">
+                    <input type="submit"  class="btn btn-info w-75" value="register"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
