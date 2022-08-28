@@ -9,5 +9,6 @@ namespace RentACar.Core.Services
 {
     public interface IPaymentService : IService<Payment>
     {
+        
     }
 }

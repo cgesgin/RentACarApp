@@ -279,3 +279,6 @@ C:\Users\User\source\repos\RentACarApp\RentACar.Web.MVC\bin\Debug\net6.0\System.
 C:\Users\User\source\repos\RentACarApp\RentACar.Web.MVC\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.Web.MVC\bin\Debug\net6.0\System.Web.WebPages.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.Web.MVC\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.Web.MVC\bin\Debug\net6.0\RabbitMQ.Client.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.Web.MVC\bin\Debug\net6.0\RentACar.RabbitMQ.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.Web.MVC\bin\Debug\net6.0\RentACar.RabbitMQ.pdb

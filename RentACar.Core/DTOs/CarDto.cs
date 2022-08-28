@@ -15,7 +15,5 @@ namespace RentACar.Core.DTOs
         public int? CarTypeId { get; set; }         
         public int? ModelId { get; set; }         
         public string? ImageName { get; set; }
-        [DisplayName("Upload File")]
-        public IFormFile? ImageFile { get; set; }
     }
 }

@@ -72,3 +72,6 @@ C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\runtimes\wi
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\RentACar.Redis.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\RentACar.Redis.pdb
+C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\RabbitMQ.Client.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\RentACar.RabbitMQ.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\RentACar.RabbitMQ.pdb

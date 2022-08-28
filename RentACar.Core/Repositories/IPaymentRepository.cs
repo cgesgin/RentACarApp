@@ -9,5 +9,6 @@ namespace RentACar.Core.Repositories
 {
     public interface IPaymentRepository : IGenericRepository<Payment>
     {
+        Task<Rental> GetByIdPaymentWithRentalAsync(int id);
     }
 }

@@ -5,7 +5,7 @@
 <h1>Update</h1>
 <div class="row">
     <div class="col-md-6">
-        <form asp-action="Update" method="post" asp-controller="Cars">
+        <form asp-action="Update" method="post" asp-controller="Cars" enctype="multipart/form-data">
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="CarDetailsId" />
             <input type="hidden" asp-for="CarDetails.Id" />
@@ -33,10 +33,10 @@
                 <label asp-for="CarDetails.Color"></label>
                 <input asp-for="CarDetails.Color" class="form-control" />
                 <span asp-validation-for="CarDetails.Color" class="text-danger"></span>
-            </div>  
+            </div>
             <div class="form-group">
                 <label asp-for="Status"></label>
-                <input asp-for="Status" class="form-control"/>
+                <input asp-for="Status" class="form-control" />
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
             <div class="form-group">

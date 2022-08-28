@@ -1,0 +1,12 @@
+C:\Users\User\source\repos\RentACarApp\RentACar.RabbitMQ\bin\Debug\net6.0\RentACar.RabbitMQ.deps.json
+C:\Users\User\source\repos\RentACarApp\RentACar.RabbitMQ\bin\Debug\net6.0\RentACar.RabbitMQ.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.RabbitMQ\bin\Debug\net6.0\RentACar.RabbitMQ.pdb
+C:\Users\User\source\repos\RentACarApp\RentACar.RabbitMQ\obj\Debug\net6.0\RentACar.RabbitMQ.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\RentACarApp\RentACar.RabbitMQ\obj\Debug\net6.0\RentACar.RabbitMQ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\RentACarApp\RentACar.RabbitMQ\obj\Debug\net6.0\RentACar.RabbitMQ.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\RentACarApp\RentACar.RabbitMQ\obj\Debug\net6.0\RentACar.RabbitMQ.AssemblyInfo.cs
+C:\Users\User\source\repos\RentACarApp\RentACar.RabbitMQ\obj\Debug\net6.0\RentACar.RabbitMQ.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\RentACarApp\RentACar.RabbitMQ\obj\Debug\net6.0\RentACar.RabbitMQ.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.RabbitMQ\obj\Debug\net6.0\refint\RentACar.RabbitMQ.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.RabbitMQ\obj\Debug\net6.0\RentACar.RabbitMQ.pdb
+C:\Users\User\source\repos\RentACarApp\RentACar.RabbitMQ\obj\Debug\net6.0\ref\RentACar.RabbitMQ.dll

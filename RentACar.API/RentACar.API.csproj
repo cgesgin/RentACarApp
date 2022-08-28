@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RentACar.Caching\RentACar.Caching.csproj" />
+    <ProjectReference Include="..\RentACar.RabbitMQ\RentACar.RabbitMQ.csproj" />
     <ProjectReference Include="..\RentACar.Redis\RentACar.Redis.csproj" />
   </ItemGroup>
 

@@ -17,3 +17,5 @@ C:\Users\User\source\repos\RentACarApp\RentACar.Caching\obj\Debug\net6.0\RentACa
 C:\Users\User\source\repos\RentACarApp\RentACar.Caching\obj\Debug\net6.0\refint\RentACar.Caching.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.Caching\obj\Debug\net6.0\RentACar.Caching.pdb
 C:\Users\User\source\repos\RentACarApp\RentACar.Caching\obj\Debug\net6.0\ref\RentACar.Caching.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.Caching\bin\Debug\net6.0\RentACar.RabbitMQ.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.Caching\bin\Debug\net6.0\RentACar.RabbitMQ.pdb

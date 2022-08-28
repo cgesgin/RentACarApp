@@ -28,14 +28,16 @@ namespace RentACar.Repository.Repositories
 
         public Task<List<Car>> GetCarWithFeatureAsync()
         {
-            return _appDbContext.Cars
+            var cars =_appDbContext.Cars
                 .Include(x => x.RentalStore)
                 .Include(x => x.CarDetails)
                 .Include(x => x.CarType)
                 .Include(x => x.Model)
                 .ThenInclude(x => x.Brand)
-                .OrderBy(x=>x.Id)
+                .OrderBy(x => x.Id)
+                .Where(x => x.Status.ToUpper() == "RENT")
                 .ToListAsync();
+            return cars;
         }
     }
 }

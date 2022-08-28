@@ -270,3 +270,6 @@ C:\Users\User\source\repos\RentACarApp\RentACar.WebWithApi\bin\Debug\net6.0\Rent
 C:\Users\User\source\repos\RentACarApp\RentACar.WebWithApi\bin\Debug\net6.0\RentACar.Repository.pdb
 C:\Users\User\source\repos\RentACarApp\RentACar.WebWithApi\bin\Debug\net6.0\RentACar.Service.pdb
 C:\Users\User\source\repos\RentACarApp\RentACar.WebWithApi\obj\Debug\net6.0\RentACar.WebWithApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\source\repos\RentACarApp\RentACar.WebWithApi\bin\Debug\net6.0\RabbitMQ.Client.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.WebWithApi\bin\Debug\net6.0\RentACar.RabbitMQ.dll
+C:\Users\User\source\repos\RentACarApp\RentACar.WebWithApi\bin\Debug\net6.0\RentACar.RabbitMQ.pdb

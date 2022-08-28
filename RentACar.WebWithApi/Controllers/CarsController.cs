@@ -8,10 +8,11 @@ namespace RentACar.WebWithApi.Controllers
     public class CarsController : Controller
     {
         private readonly ApiService _apiService;
-
-        public CarsController(ApiService apiService)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public CarsController(ApiService apiService, IWebHostEnvironment webHostEnvironment)
         {
             _apiService = apiService;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public async Task<IActionResult> Index()

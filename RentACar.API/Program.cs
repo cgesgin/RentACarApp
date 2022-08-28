@@ -3,9 +3,11 @@ using Autofac.Extensions.DependencyInjection;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using RabbitMQ.Client;
 using RentACar.API.Filters;
 using RentACar.API.Middlewares;
 using RentACar.API.Modules;
+using RentACar.RabbitMQ;
 using RentACar.Redis;
 using RentACar.Repository;
 using RentACar.Service.Mapping;
@@ -20,6 +22,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//RabbitMq
+builder.Services.AddSingleton(sp => new ConnectionFactory() { Uri = new Uri(builder.Configuration.GetConnectionString("RabbitMQ")), DispatchConsumersAsync = true });
+builder.Services.AddSingleton<RabbitMQPublisher>();
+builder.Services.AddSingleton<RabbitMQClientService>();
 
 //Add InMemoryCache
 builder.Services.AddMemoryCache();

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using RentACar.Core.DTOs;
 using RentACar.Core.Models;
 using RentACar.Core.Services;
+using RentACar.RabbitMQ;
 
 namespace RentACar.API.Controllers
 {
