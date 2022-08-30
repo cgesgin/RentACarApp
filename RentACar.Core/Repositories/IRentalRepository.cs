@@ -9,5 +9,6 @@ namespace RentACar.Core.Repositories
 {
     public interface IRentalRepository : IGenericRepository<Rental>
     {
+        Task<List<Rental>> GetByUserIdWithCarAndCostumerAsync(string userId);
     }
 }

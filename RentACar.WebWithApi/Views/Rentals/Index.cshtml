@@ -1,0 +1,57 @@
+﻿@model IEnumerable<RentACar.Core.DTOs.RentalWithCarAndCostumerDto>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Index</h1>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>RentalDate</td>
+            <td>ReturnDate</td>
+            <td>RentalAmount</td>
+            <td>TotalAmount</td>
+            <td>RentalStore</td>
+            <td>DropStore</td>
+            <td>Customer</td>
+            <td>Car</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.RentalDate</td>
+                <td>@item.ReturnDate</td>
+                <td>@item.RentalAmount</td>
+                <td>@item.TotalAmount</td>
+                <td>
+                    <ul>
+                        <li>Name  - @item.Car.RentalStore.Name</li>
+                        <li>Name  - @item.Car.RentalStore.Email</li>
+                        <li>Name  - @item.Car.RentalStore.phone</li>
+                    </ul>
+                </td>
+                 <td>
+                    <ul>
+                        <li>Name  - @item.DropStore.Name</li>
+                        <li>Name  - @item.DropStore.Email</li>
+                        <li>Name  - @item.DropStore.phone</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Name  - @item.Costumer.Name</li>
+                        <li>Lastname - @item.Costumer.LastName</li>
+                        <li>Email - @item.Costumer.Email</li>
+                        <li>Phone - @item.Costumer.Phone</li>
+                        <li>LisanceNo - @item.Costumer.LisanceNo</li>
+                    </ul>
+                </td>
+                <td>@item.Car.Model.Name - @item.Car.Model.Brand.Name </td>
+            </tr>
+        }
+    </tbody>
+</table>

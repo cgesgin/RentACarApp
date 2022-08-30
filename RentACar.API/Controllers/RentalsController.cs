@@ -57,5 +57,13 @@ namespace RentACar.API.Controllers
             await _service.RemoveAsync(rental);
             return CreateActionResult(ResponseDto<NoContentDto>.Success(204));
         }
+
+        [HttpGet("[action]/{userId}")]
+        public async Task<IActionResult> GetByUserIdWithCarAndCostumer(string userId)
+        {
+            var rentals = await _service.GetByUserIdWithCarAndCostumerAsync(userId);
+            var rentalDtos = _mapper.Map<List<RentalWithCarAndCostumerDto>>(rentals.ToList());
+            return CreateActionResult(ResponseDto<List<RentalWithCarAndCostumerDto>>.Success(200, rentalDtos));
+        }
     }
 }

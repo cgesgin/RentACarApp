@@ -1,0 +1,44 @@
+﻿@using RentACar.Core.DTOs
+@model RentACar.Core.DTOs.PaymentDto
+@{
+    ViewData["Title"] = "Save";
+    RentalDto rental = ViewBag.rental;
+}
+<h1>Save</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Save" method="post" asp-controller="Payments">
+             <input type="hidden" asp-for="RentalId" value="@rental.Id"/>             
+            <input type="hidden" asp-for="Id" value="0"/>
+            <div class="form-group">
+                <label asp-for="CardName"></label>
+                <input asp-for="CardName" class="form-control"/>
+                <span asp-validation-for="CardName" class="text-danger"></span>
+            </div>
+              <div class="form-group">
+                <label asp-for="CardNo"></label>
+                <input asp-for="CardNo" class="form-control"/>
+                <span asp-validation-for="CardNo" class="text-danger"></span>
+            </div>
+           <div class="form-group">
+                <label asp-for="CVV"></label>
+                <input asp-for="CVV" class="form-control"/>
+                <span asp-validation-for="CVV" class="text-danger"></span>
+            </div>
+              <div class="form-group">
+                <label asp-for="ExpriyDate"></label>
+                <input asp-for="ExpriyDate" class="form-control"/>
+                <span asp-validation-for="ExpriyDate" class="text-danger"></span>
+            </div> 
+            <div class="form-group">
+                <label asp-for="Amount"></label>
+                <input asp-for="Amount" class="form-control" value="@rental.TotalAmount" readonly/>
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>           
+             <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>

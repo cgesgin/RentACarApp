@@ -1,0 +1,138 @@
+﻿@using RentACar.Core.DTOs
+@model RentACar.Core.DTOs.RentalWithCostumerDto
+@{
+    ViewData["Title"] = "Save";
+    CarWithFeatureDto car = ViewBag.car;
+}
+
+<h1>Save</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>SeatCapacity</td>
+            <td>GearType</td>
+            <td>FuelType</td>
+            <td>CarType</td>
+            <td>Price</td>
+            <td>RentalStore</td>
+            <td>CarFeature</td>
+            <td>Model</td>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>@car.Id</td>
+                <td>@car.SeatCapacity</td>
+                <td>@car.GearType</td>
+                <td>@car.FuelType</td>
+                <td>@car.CarType.Name</td>
+                <td>@car.Price</td>
+                <td>
+                    <ul>
+                        <li>Name  - @car.RentalStore.Name</li>
+                        <li>Phone - @car.RentalStore.phone</li>
+                        <li>Mail  - @car.RentalStore.Email</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>@car.CarDetails.CarYear</li>
+                        <li>@car.CarDetails.Color</li>
+                    </ul>
+                </td>
+                <td>@car.Model.Name - @car.Model.Brand.Name </td>
+            </tr>
+    </tbody>
+</table>
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Save" method="post" asp-controller="Rentals" >
+            <input type="hidden" asp-for="CarId" value="@car.Id"/>
+            <input type="hidden" asp-for="Id" value="0"/>
+            <div class="form-group">
+                <label asp-for="RentalDate"></label>
+                <input  id="first" type="text"  asp-for="RentalDate" class="form-control"readonly  />
+                <span asp-validation-for="RentalDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReturnDate"></label>
+                <input id="end" type="text" asp-for="ReturnDate" class="form-control" readonly  />
+                <span asp-validation-for="ReturnDate" class="text-danger"></span>
+            </div>
+              <div class="form-group">
+                <label asp-for="DropStoreId"></label>
+                <select asp-for="DropStoreId" asp-items="ViewBag.rentalStores" class="form-control"></select>
+                <span asp-validation-for="DropStoreId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalAmount"></label>
+                <input  id="RentalAmount" asp-for="RentalAmount" value="@car.Price" class="form-control" readonly/>
+                <span asp-validation-for="RentalAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalAmount"></label>
+                <input id="TotalAmount" asp-for="TotalAmount" class="form-control" readonly/>
+                <span asp-validation-for="TotalAmount" class="text-danger"></span>
+            </div>
+            <h4>Costumer</h4>
+            <div class="form-group">
+                <label asp-for="Costumer.Name"></label>
+                <input asp-for="Costumer.Name" class="form-control" />
+                <span asp-validation-for="Costumer.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Costumer.LastName"></label>
+                <input asp-for="Costumer.LastName" class="form-control" />
+                <span asp-validation-for="Costumer.LastName" class="text-danger"></span>
+            </div> 
+            <div class="form-group">
+                <label asp-for="Costumer.Email"></label>
+                <input asp-for="Costumer.Email" class="form-control" />
+                <span asp-validation-for="Costumer.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Costumer.Phone"></label>
+                <input asp-for="Costumer.Phone" class="form-control" />
+                <span asp-validation-for="Costumer.Phone" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="Costumer.LisanceNo"></label>
+                <input asp-for="Costumer.LisanceNo" class="form-control" />
+                <span asp-validation-for="Costumer.LisanceNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $("#first").datepicker({
+            minDate: 0,
+            dateFormat: 'dd/mm/yy',
+            onSelect: function() {
+                calculateAmount();
+            }
+        });
+        $("#end").datepicker({
+            minDate: 0,
+            dateFormat: 'dd/mm/yy',
+            onSelect: function() {
+                calculateAmount();
+            }
+        });
+        function calculateAmount() {
+            var start = $("#first").datepicker("getDate");
+            var end = $("#end").datepicker("getDate");
+            var amount = $('#RentalAmount').val();
+            days = (end - start) / (1000 * 60 * 60 * 24);
+            var total = (days) * amount;
+            if (total > 0) {
+                $('#TotalAmount').val(total);
+            }
+};
+</script>
