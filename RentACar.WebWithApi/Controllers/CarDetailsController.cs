@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using RentACar.Core.DTOs;
 using RentACar.WebWithApi.Service;
 
 namespace RentACar.WebWithApi.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CarDetailsController : Controller
     {
         private readonly ApiService _apiService;

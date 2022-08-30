@@ -3,9 +3,6 @@
     ViewData["Title"] = "Index";
 }
 <h1>Index</h1>
-<div>
-    <a asp-action="Save" asp-controller="Cars" class="btn btn-info">Create</a>
-</div>
 <br />
 <table class="table table-striped">
     <thead>
@@ -47,9 +44,21 @@
                 </td>
                 <td>@item.Model.Name - @item.Model.Brand.Name </td>
                 <td>
-                    <a asp-action="Save" asp-controller="Rentals" asp-route-id="@item.Id" class="btn btn-success">Rent</a>
-                    <a asp-action="Update" asp-controller="Cars" asp-route-id="@item.Id" class="btn btn-success">Update</a>
-                    <a asp-action="Remove" asp-controller="Cars" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a asp-action="Save" asp-controller="Rentals" asp-route-id="@item.Id" class="btn btn-primary">reservation</a>
+                        if (User.IsInRole("Admin"))
+                        {
+                            <a asp-action="Save" asp-controller="Cars" class="btn btn-info">Create</a>
+                            <a asp-action="Update" asp-controller="Cars" asp-route-id="@item.Id" class="btn btn-success">Update</a>
+                            <a asp-action="Remove" asp-controller="Cars" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                        }
+                    }
+                    else
+                    {
+                        <a type="button" class="btn btn-secondary" disabled>reservation</a>
+                    }
+
                 </td>
             </tr>
         }

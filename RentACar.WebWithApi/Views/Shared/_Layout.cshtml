@@ -34,26 +34,39 @@
                         @{
                             if (SignInManager.IsSignedIn(User))
                             {
-                                //menus to appear at the login entry
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Rentals" asp-action="Index">My Rentals</a>
-                                </li>
                                 if (User.IsInRole("Admin"))
                                 {
                                     //menus to appear at the Admin entry
                                     <li class="nav-item">
                                         <a class="nav-link text-dark" asp-area="" asp-controller="Addresses" asp-action="Index">Address</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="RentalStores" asp-action="Index">RentalStores</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Cities" asp-action="Index">Cities</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Districts" asp-action="Index">Districts</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Brands" asp-action="Index">Brands</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Models" asp-action="Index">Models</a>
+                                    </li>
                                 }
-                            }
-                            if (SignInManager.IsSignedIn(User))
-                            {
+                                //menus to appear at the login entry
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Rentals" asp-action="Index">My Rentals</a>
+                                </li>
                                 <ul class="navbar-nav flex-grow-1 justify-content-end ">
                                     <p>Hello @User.Identity.Name</p>
                                     <li class="nav-item">
                                         <a class="btn btn-primary" asp-area="" asp-controller="Users" asp-action="Logout">Logout</a>
                                     </li>
                                 </ul>
+
                             }
                             else
                             {
