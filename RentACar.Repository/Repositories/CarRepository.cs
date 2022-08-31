@@ -13,6 +13,7 @@ namespace RentACar.Repository.Repositories
     {
         public CarRepository(AppDbContext appDbContext) : base(appDbContext)
         {
+            
         }
 
         public Task<Car> GetByIdCarWithFeatureAsync(int id)
@@ -36,6 +37,7 @@ namespace RentACar.Repository.Repositories
                 .ThenInclude(x => x.Brand)
                 .OrderBy(x => x.Id)
                 .Where(x => x.Status.ToUpper() == "RENT")
+                .AsNoTracking()
                 .ToListAsync();
             return cars;
         }

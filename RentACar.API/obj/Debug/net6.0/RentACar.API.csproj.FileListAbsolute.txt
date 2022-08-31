@@ -75,3 +75,4 @@ C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\RentACar.Re
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\RabbitMQ.Client.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\RentACar.RabbitMQ.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\RentACar.RabbitMQ.pdb
+C:\Users\User\source\repos\RentACarApp\RentACar.API\bin\Debug\net6.0\Newtonsoft.Json.dll

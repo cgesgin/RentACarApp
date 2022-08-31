@@ -4,6 +4,10 @@
 }
 <h1>Index</h1>
 <br />
+@if (User.IsInRole("Admin"))
+{
+    <a asp-action="Save" asp-controller="Cars" class="btn btn-info">Create</a>
+}
 <table class="table table-striped">
     <thead>
         <tr>
@@ -49,7 +53,6 @@
                         <a asp-action="Save" asp-controller="Rentals" asp-route-id="@item.Id" class="btn btn-primary">reservation</a>
                         if (User.IsInRole("Admin"))
                         {
-                            <a asp-action="Save" asp-controller="Cars" class="btn btn-info">Create</a>
                             <a asp-action="Update" asp-controller="Cars" asp-route-id="@item.Id" class="btn btn-success">Update</a>
                             <a asp-action="Remove" asp-controller="Cars" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
                         }

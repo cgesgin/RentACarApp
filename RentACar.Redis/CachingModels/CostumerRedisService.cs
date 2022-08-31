@@ -1,4 +1,4 @@
-﻿    using AutoMapper;
+﻿using AutoMapper;
 using RentACar.Core.Models;
 using RentACar.Core.Repositories;
 using RentACar.Core.Services;
@@ -9,7 +9,7 @@ using System.Text.Json;
 
 namespace RentACar.Redis.CachingModels
 {
-    public class CostumerRedisService : ICostumerService
+    public class CostumerRedisService : ICostumerService, IRedisCaching<Costumer>
     {
         private const string CachingCostumerKey = "costumers";
         private readonly IMapper _mapper;
@@ -29,7 +29,7 @@ namespace RentACar.Redis.CachingModels
         {
             await _repository.AddAsync(entity);
             await _unitOfWork.CommitAsync();
-            CallAllCache();
+            AddCache();
             return entity;
         }
 
@@ -37,13 +37,13 @@ namespace RentACar.Redis.CachingModels
         {
             await _repository.AddRangeAsync(entities);
             await _unitOfWork.CommitAsync();
-            CallAllCache();
+            AddCache();
             return entities;
         }
 
         public Task<bool> AnyAsync(Expression<Func<Costumer, bool>> expression)
         {
-            return Task.FromResult(GetCacheData().Any(expression.Compile()));
+            return Task.FromResult(GetCacheDataList().Any(expression.Compile()));
         }
 
         public Task<IEnumerable<Costumer>> GetAllAsync()
@@ -61,9 +61,9 @@ namespace RentACar.Redis.CachingModels
         public Task<Costumer> GetByIdAsync(int id)
         {
             Costumer value = null;
-            GetCacheData().ForEach(x =>
+            GetCacheDataList().ForEach(x =>
             {
-                if (x.Id==id)
+                if (x.Id == id)
                 {
                     value = x;
                 }
@@ -75,27 +75,27 @@ namespace RentACar.Redis.CachingModels
         {
             _repository.Remove(entity);
             await _unitOfWork.CommitAsync();
-            CallAllCache();
+            AddCache();
         }
 
         public async Task RemoveRangeAsync(IEnumerable<Costumer> entities)
         {
             _repository.RemoveRange(entities);
             await _unitOfWork.CommitAsync();
-            CallAllCache();
+            AddCache();
         }
 
         public async Task UpdateAsync(Costumer entity)
         {
             _repository.Update(entity);
             await _unitOfWork.CommitAsync();
-            CallAllCache();
+            AddCache();
         }
         public IQueryable<Costumer> Where(Expression<Func<Costumer, bool>> expression)
         {
-            return GetCacheData().Where(expression.Compile()).AsQueryable();
+            return GetCacheDataList().Where(expression.Compile()).AsQueryable();
         }
-        private List<Costumer> GetCacheData() 
+        public List<Costumer> GetCacheDataList()
         {
             List<Costumer> list = new List<Costumer>();
 
@@ -106,30 +106,18 @@ namespace RentACar.Redis.CachingModels
             });
             return list;
         }
-        private void CallAllCache()
+        public void AddCache()
         {
             if (_cache.GetDb(0).KeyExists(CachingCostumerKey))
             {
                 _cache.GetDb(0).KeyDelete(CachingCostumerKey);
-                foreach (var item in _repository.GetAll().ToList())
-                {
-                    string jsonEntities = JsonSerializer.Serialize(item);
-                    _cache.GetDb(0).ListRightPush(CachingCostumerKey, jsonEntities);
-                }
-                _cache.GetDb(0).KeyExpire(CachingCostumerKey, DateTime.Now.AddMinutes(1));
             }
-        }
-        private void AddCache()
-        {
-            if (!_cache.GetDb(0).KeyExists(CachingCostumerKey))
+            foreach (var item in _repository.GetAll().ToList())
             {
-                foreach (var item in _repository.GetAll().ToList())
-                {
-                    string jsonEntities = JsonSerializer.Serialize(item);
-                    _cache.GetDb(0).ListRightPush(CachingCostumerKey, jsonEntities);
-                }
-                _cache.GetDb(0).KeyExpire(CachingCostumerKey,DateTime.Now.AddMinutes(1));
+                string jsonEntities = JsonSerializer.Serialize(item);
+                _cache.GetDb(0).ListRightPush(CachingCostumerKey, jsonEntities);
             }
+            _cache.GetDb(0).KeyExpire(CachingCostumerKey, DateTime.Now.AddMinutes(1));
         }
     }
 }

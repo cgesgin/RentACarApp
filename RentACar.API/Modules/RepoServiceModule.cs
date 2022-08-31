@@ -44,7 +44,8 @@ namespace RentACar.API.Modules
             //builder.RegisterType<CostumerCachingService>().As<ICostumerService>();
 
             // Open The Redis
-            //builder.RegisterType<CostumerRedisService>().As<ICostumerService>();
+            builder.RegisterType<CostumerRedisService>().As<ICostumerService>();
+            builder.RegisterType<CarRedisService>().As<ICarService>();
 
             base.Load(builder);
         }
