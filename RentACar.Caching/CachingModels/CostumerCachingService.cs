@@ -110,7 +110,6 @@ namespace RentACar.Caching.CachingModels
         public async Task CacheAllAsync()
         {
             _memoryCache.Set(CachingCostumerKey, await _repository.GetAll().ToListAsync());
-
         }
     }
 }

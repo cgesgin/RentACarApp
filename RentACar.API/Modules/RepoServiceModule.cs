@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using RentACar.Caching;
 using RentACar.Caching.CachingModels;
 using RentACar.Core.Repositories;
 using RentACar.Core.Services;
@@ -42,10 +43,11 @@ namespace RentACar.API.Modules
 
             // Open The Caching
             //builder.RegisterType<CostumerCachingService>().As<ICostumerService>();
+            builder.RegisterType<CarCachingService>().As<ICarService>();
 
             // Open The Redis
-            builder.RegisterType<CostumerRedisService>().As<ICostumerService>();
-            builder.RegisterType<CarRedisService>().As<ICarService>();
+            //builder.RegisterType<CostumerRedisService>().As<ICostumerService>();
+            //builder.RegisterType<CarRedisService>().As<ICarService>();
 
             base.Load(builder);
         }
