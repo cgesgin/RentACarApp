@@ -9,9 +9,9 @@ namespace RentACar.WebWithApi.Controllers
     [Authorize(Roles = "Admin")]
     public class AddressesController : Controller
     {
-        private readonly ApiService _apiService;
+        private readonly IApiService _apiService;
 
-        public AddressesController(ApiService apiService)
+        public AddressesController(IApiService apiService)
         {
             _apiService = apiService;
         }

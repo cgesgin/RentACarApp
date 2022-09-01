@@ -10,8 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<CostumerDtoValidator>());
 
-
-builder.Services.AddHttpClient<ApiService>(option =>
+//HttpClient
+builder.Services.AddHttpClient<IApiService,ApiService> (option =>
 {
     option.BaseAddress = new Uri(builder.Configuration["BaseUrl"]);
 });

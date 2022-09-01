@@ -8,9 +8,9 @@ namespace RentACar.WebWithApi.Controllers
 {
     public class CarsController : Controller
     {
-        private readonly ApiService _apiService;
+        private readonly IApiService _apiService;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        public CarsController(ApiService apiService, IWebHostEnvironment webHostEnvironment)
+        public CarsController(IApiService apiService, IWebHostEnvironment webHostEnvironment)
         {
             _apiService = apiService;
             _webHostEnvironment = webHostEnvironment;

@@ -8,9 +8,9 @@ namespace RentACar.WebWithApi.Controllers
     [Authorize(Roles = "Admin")]
     public class CarDetailsController : Controller
     {
-        private readonly ApiService _apiService;
+        private readonly IApiService _apiService;
 
-        public CarDetailsController(ApiService apiService)
+        public CarDetailsController(IApiService apiService)
         {
             _apiService = apiService;
         }

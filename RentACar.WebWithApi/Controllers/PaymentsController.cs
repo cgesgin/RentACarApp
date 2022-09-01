@@ -8,9 +8,9 @@ namespace RentACar.WebWithApi.Controllers
     [Authorize]
     public class PaymentsController : Controller
     {
-        private readonly ApiService _apiService;
+        private readonly IApiService _apiService;
 
-        public PaymentsController(ApiService apiService)
+        public PaymentsController(IApiService apiService)
         {
             _apiService = apiService;
         }

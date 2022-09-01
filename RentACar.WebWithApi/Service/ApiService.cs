@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RentACar.WebWithApi.Service
 {
-    public class ApiService
+    public class ApiService : IApiService
     {
         public readonly HttpClient _httpClient;
 
@@ -20,7 +20,7 @@ namespace RentACar.WebWithApi.Service
             return response.Data;
         }
 
-        public async Task<T> SaveAsync<T>(string url,T data) where T : class 
+        public async Task<T> SaveAsync<T>(string url, T data) where T : class
         {
             var response = await _httpClient.PostAsJsonAsync(url, data);
             if (response.IsSuccessStatusCode) 
@@ -37,7 +37,7 @@ namespace RentACar.WebWithApi.Service
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<T> GetByIdAsync<T>(string url) where T : class//$"costumers/{id}"
+        public async Task<T> GetByIdAsync<T>(string url) where T : class
         {
             dynamic response = await _httpClient.GetFromJsonAsync<ResponseDto<T>>(url);
             return response.Data;

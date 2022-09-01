@@ -10,10 +10,10 @@ namespace RentACar.WebWithApi.Controllers
     [Authorize]
     public class RentalsController : Controller
     {
-        private readonly ApiService _apiService;
+        private readonly IApiService _apiService;
         private readonly UserManager<IdentityUser> _userManager;
 
-        public RentalsController(ApiService apiService, UserManager<IdentityUser> userManager)
+        public RentalsController(IApiService apiService, UserManager<IdentityUser> userManager)
         {
             _apiService = apiService;
             _userManager = userManager;
