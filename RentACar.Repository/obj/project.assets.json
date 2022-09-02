@@ -1208,19 +1208,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\cevher gesgin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Repository\\RentACar.Repository.csproj",
+      "projectUniqueName": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Repository\\RentACar.Repository.csproj",
       "projectName": "RentACar.Repository",
-      "projectPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Repository\\RentACar.Repository.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Repository\\obj\\",
+      "projectPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Repository\\RentACar.Repository.csproj",
+      "packagesPath": "C:\\Users\\cevher gesgin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cevher gesgin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1234,8 +1234,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Core\\RentACar.Core.csproj": {
-              "projectPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Core\\RentACar.Core.csproj"
+            "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Core\\RentACar.Core.csproj": {
+              "projectPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Core\\RentACar.Core.csproj"
             }
           }
         }

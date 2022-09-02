@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RentACar.WebWithApi\RentACar.WebWithApi.csproj" />
+  </ItemGroup>
+
 </Project>

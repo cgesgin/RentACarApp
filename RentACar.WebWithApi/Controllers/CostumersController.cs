@@ -38,8 +38,9 @@ namespace RentACar.WebWithApi.Controllers
         }
 
         public async Task<IActionResult> Update(int id)
-        {
+        {           
             var costumer = await _apiService.GetByIdAsync<CostumerDto>($"Costumers/{id}");
+            if (costumer==null){ return RedirectToAction(nameof(Index));}
             return View(costumer);
         }
 
@@ -51,7 +52,7 @@ namespace RentACar.WebWithApi.Controllers
                 await _apiService.UpdateAsync<CostumerDto>("Costumers", costumerDto);
                 return RedirectToAction(nameof(Index));
             }
-            return View();
+            return View(costumerDto);
         }
 
         public async Task<IActionResult> Remove(int id)

@@ -19,3 +19,24 @@ C:\Users\User\source\repos\RentACarApp\RentACar.Redis\obj\Debug\net6.0\RentACar.
 C:\Users\User\source\repos\RentACarApp\RentACar.Redis\obj\Debug\net6.0\ref\RentACar.Redis.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.Redis\bin\Debug\net6.0\RentACar.RabbitMQ.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.Redis\bin\Debug\net6.0\RentACar.RabbitMQ.pdb
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\bin\Debug\net6.0\RentACar.Redis.deps.json
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\bin\Debug\net6.0\RentACar.Redis.dll
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\bin\Debug\net6.0\RentACar.Redis.pdb
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\bin\Debug\net6.0\RentACar.Core.dll
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\bin\Debug\net6.0\RentACar.RabbitMQ.dll
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\bin\Debug\net6.0\RentACar.Repository.dll
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\bin\Debug\net6.0\RentACar.Service.dll
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\bin\Debug\net6.0\RentACar.Service.pdb
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\bin\Debug\net6.0\RentACar.Core.pdb
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\bin\Debug\net6.0\RentACar.RabbitMQ.pdb
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\bin\Debug\net6.0\RentACar.Repository.pdb
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\obj\Debug\net6.0\RentACar.Redis.csproj.AssemblyReference.cache
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\obj\Debug\net6.0\RentACar.Redis.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\obj\Debug\net6.0\RentACar.Redis.AssemblyInfoInputs.cache
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\obj\Debug\net6.0\RentACar.Redis.AssemblyInfo.cs
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\obj\Debug\net6.0\RentACar.Redis.csproj.CoreCompileInputs.cache
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\obj\Debug\net6.0\RentACar.Redis.csproj.CopyComplete
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\obj\Debug\net6.0\RentACar.Redis.dll
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\obj\Debug\net6.0\refint\RentACar.Redis.dll
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\obj\Debug\net6.0\RentACar.Redis.pdb
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Redis\obj\Debug\net6.0\ref\RentACar.Redis.dll

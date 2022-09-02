@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Caching\\RentACar.Caching.csproj": {}
+    "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Caching\\RentACar.Caching.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Caching\\RentACar.Caching.csproj": {
+    "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Caching\\RentACar.Caching.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Caching\\RentACar.Caching.csproj",
+        "projectUniqueName": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Caching\\RentACar.Caching.csproj",
         "projectName": "RentACar.Caching",
-        "projectPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Caching\\RentACar.Caching.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Caching\\obj\\",
+        "projectPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Caching\\RentACar.Caching.csproj",
+        "packagesPath": "C:\\Users\\cevher gesgin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Caching\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cevher gesgin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Service\\RentACar.Service.csproj": {
-                "projectPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Service\\RentACar.Service.csproj"
+              "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Service\\RentACar.Service.csproj": {
+                "projectPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Service\\RentACar.Service.csproj"
               }
             }
           }
@@ -62,17 +62,17 @@
         }
       }
     },
-    "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Core\\RentACar.Core.csproj": {
+    "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Core\\RentACar.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Core\\RentACar.Core.csproj",
+        "projectUniqueName": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Core\\RentACar.Core.csproj",
         "projectName": "RentACar.Core",
-        "projectPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Core\\RentACar.Core.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Core\\obj\\",
+        "projectPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Core\\RentACar.Core.csproj",
+        "packagesPath": "C:\\Users\\cevher gesgin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cevher gesgin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -122,17 +122,17 @@
         }
       }
     },
-    "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.RabbitMQ\\RentACar.RabbitMQ.csproj": {
+    "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.RabbitMQ\\RentACar.RabbitMQ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.RabbitMQ\\RentACar.RabbitMQ.csproj",
+        "projectUniqueName": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.RabbitMQ\\RentACar.RabbitMQ.csproj",
         "projectName": "RentACar.RabbitMQ",
-        "projectPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.RabbitMQ\\RentACar.RabbitMQ.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.RabbitMQ\\obj\\",
+        "projectPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.RabbitMQ\\RentACar.RabbitMQ.csproj",
+        "packagesPath": "C:\\Users\\cevher gesgin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.RabbitMQ\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cevher gesgin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -182,17 +182,17 @@
         }
       }
     },
-    "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Repository\\RentACar.Repository.csproj": {
+    "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Repository\\RentACar.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Repository\\RentACar.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Repository\\RentACar.Repository.csproj",
         "projectName": "RentACar.Repository",
-        "projectPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Repository\\RentACar.Repository.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Repository\\obj\\",
+        "projectPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Repository\\RentACar.Repository.csproj",
+        "packagesPath": "C:\\Users\\cevher gesgin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cevher gesgin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -206,8 +206,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Core\\RentACar.Core.csproj": {
-                "projectPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Core\\RentACar.Core.csproj"
+              "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Core\\RentACar.Core.csproj": {
+                "projectPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Core\\RentACar.Core.csproj"
               }
             }
           }
@@ -264,17 +264,17 @@
         }
       }
     },
-    "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Service\\RentACar.Service.csproj": {
+    "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Service\\RentACar.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Service\\RentACar.Service.csproj",
+        "projectUniqueName": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Service\\RentACar.Service.csproj",
         "projectName": "RentACar.Service",
-        "projectPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Service\\RentACar.Service.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Service\\obj\\",
+        "projectPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Service\\RentACar.Service.csproj",
+        "packagesPath": "C:\\Users\\cevher gesgin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cevher gesgin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -288,11 +288,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.RabbitMQ\\RentACar.RabbitMQ.csproj": {
-                "projectPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.RabbitMQ\\RentACar.RabbitMQ.csproj"
+              "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.RabbitMQ\\RentACar.RabbitMQ.csproj": {
+                "projectPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.RabbitMQ\\RentACar.RabbitMQ.csproj"
               },
-              "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Repository\\RentACar.Repository.csproj": {
-                "projectPath": "C:\\Users\\User\\source\\repos\\RentACarApp\\RentACar.Repository\\RentACar.Repository.csproj"
+              "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Repository\\RentACar.Repository.csproj": {
+                "projectPath": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Repository\\RentACar.Repository.csproj"
               }
             }
           }

@@ -10,3 +10,15 @@ C:\Users\User\source\repos\RentACarApp\RentACar.Core\obj\Debug\net6.0\RentACar.C
 C:\Users\User\source\repos\RentACarApp\RentACar.Core\obj\Debug\net6.0\refint\RentACar.Core.dll
 C:\Users\User\source\repos\RentACarApp\RentACar.Core\obj\Debug\net6.0\RentACar.Core.pdb
 C:\Users\User\source\repos\RentACarApp\RentACar.Core\obj\Debug\net6.0\ref\RentACar.Core.dll
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Core\bin\Debug\net6.0\RentACar.Core.deps.json
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Core\bin\Debug\net6.0\RentACar.Core.dll
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Core\bin\Debug\net6.0\RentACar.Core.pdb
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Core\obj\Debug\net6.0\RentACar.Core.csproj.AssemblyReference.cache
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Core\obj\Debug\net6.0\RentACar.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Core\obj\Debug\net6.0\RentACar.Core.AssemblyInfoInputs.cache
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Core\obj\Debug\net6.0\RentACar.Core.AssemblyInfo.cs
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Core\obj\Debug\net6.0\RentACar.Core.csproj.CoreCompileInputs.cache
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Core\obj\Debug\net6.0\RentACar.Core.dll
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Core\obj\Debug\net6.0\refint\RentACar.Core.dll
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Core\obj\Debug\net6.0\RentACar.Core.pdb
+C:\Users\cevher gesgin\Desktop\RentACarApp\RentACar.Core\obj\Debug\net6.0\ref\RentACar.Core.dll
