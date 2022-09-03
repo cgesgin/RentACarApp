@@ -158,7 +158,7 @@ namespace RentACar.Test.WebWithApi.Controllers
             _mock.Verify(x => x.RemoveAsync($"Costumers/{costumer.Id}"), Times.Once);
         }
 
-        public List<CostumerDto> GetCostumerList()
+        private List<CostumerDto> GetCostumerList()
         {
             List<CostumerDto> list = new List<CostumerDto>()
             {

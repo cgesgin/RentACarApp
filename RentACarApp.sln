@@ -28,7 +28,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.RabbitMQ", "RentAC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.WorkerService.MailSendler", "RentACar.WorkerService.MailSendler\RentACar.WorkerService.MailSendler.csproj", "{042B98D8-7A9E-4E4B-877A-C197CCFE7EC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Test.WebWithApi", "RentACar.Test.WebWithApi\RentACar.Test.WebWithApi.csproj", "{C4BCE418-DCE6-4DDD-A02D-0652DF5E5DF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.Test.WebWithApi", "RentACar.Test.WebWithApi\RentACar.Test.WebWithApi.csproj", "{C4BCE418-DCE6-4DDD-A02D-0652DF5E5DF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Test.API", "RentACar.Test.API\RentACar.Test.API.csproj", "{2D31B1DB-606D-49B5-93F4-5EE9545F3460}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,6 +82,10 @@ Global
 		{C4BCE418-DCE6-4DDD-A02D-0652DF5E5DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4BCE418-DCE6-4DDD-A02D-0652DF5E5DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4BCE418-DCE6-4DDD-A02D-0652DF5E5DF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D31B1DB-606D-49B5-93F4-5EE9545F3460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D31B1DB-606D-49B5-93F4-5EE9545F3460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D31B1DB-606D-49B5-93F4-5EE9545F3460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D31B1DB-606D-49B5-93F4-5EE9545F3460}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
