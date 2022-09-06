@@ -54,7 +54,7 @@ namespace RentACar.WorkerService.MailSendler
 
             channel.BasicAck(@event.DeliveryTag, false);
 
-            _logger.LogInformation("Success : " + result.CarBrand);
+            _logger.LogInformation("Success : sent to " + result.CostumerEmail);
 
             return Task.CompletedTask;
         }

@@ -46,7 +46,6 @@ namespace RentACar.API.Controllers
         [HttpPut]
         public async Task<IActionResult> Update(CarDetailsDto carDetailsDto)
         {
-            await _service.AnyAsync(x => x.Id == carDetailsDto.Id);
             var carDetails =_mapper.Map<CarDetails>(carDetailsDto);
             await _service.UpdateAsync(carDetails);
             return CreateActionResult(ResponseDto<NoContentDto>.Success(204));
