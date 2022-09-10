@@ -1,9 +1,0 @@
-{
-  "RentACar.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.API",
-  "RentACar.Caching, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Caching",
-  "RentACar.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Core",
-  "RentACar.RabbitMQ, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.RabbitMQ",
-  "RentACar.Redis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Redis",
-  "RentACar.Repository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Repository",
-  "RentACar.Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\cevher gesgin\\Desktop\\RentACarApp\\RentACar.Service"
-}
