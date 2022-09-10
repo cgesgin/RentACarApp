@@ -20,5 +20,7 @@
     <ProjectReference Include="..\RentACar.RabbitMQ\RentACar.RabbitMQ.csproj" />
     <ProjectReference Include="..\RentACar.Redis\RentACar.Redis.csproj" />
   </ItemGroup>
-
+	<ItemGroup>
+		<InternalsVisibleTo Include="RentACar.Test.API" />
+	</ItemGroup>
 </Project>

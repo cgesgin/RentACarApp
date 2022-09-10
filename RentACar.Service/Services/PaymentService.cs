@@ -18,6 +18,7 @@ namespace RentACar.Service.Services
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
         private readonly RabbitMQPublisher _rabbitMQPublisher;
+
         public PaymentService(IGenericRepository<Payment> repository, IUnitOfWork unitOfWork, IPaymentRepository paymentRepository, IMapper mapper, RabbitMQPublisher rabbitMQPublisher) : base(repository, unitOfWork)
         {
             _paymentRepository = paymentRepository;

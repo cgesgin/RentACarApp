@@ -24,9 +24,25 @@ namespace RentACar.Repository.Repositories
                 .ThenInclude(x => x.Model)
                 .ThenInclude(x => x.Brand)
                 .OrderBy(x => x.Id)
-                .Where(x => x.Costumer.UserId == userId).ToListAsync();            
+                .Where(x => x.Costumer.UserId == userId).ToListAsync();
             data.ForEach(x =>
                 x.Car = _appDbContext.Cars.Include(x => x.RentalStore).First(p => p.Id == x.CarId)
+            );
+            return data;
+        }
+
+        public async Task<List<Rental>> GetRentalWithCarAndCostumerAsync()
+        {
+            var data = await _appDbContext.Rentals
+               .Include(x => x.DropStore)
+               .Include(x => x.Costumer)
+               .Include(x => x.Car)
+               .ThenInclude(x => x.Model)
+               .ThenInclude(x => x.Brand)
+               .OrderByDescending(x => x.Id)
+               .ToListAsync();
+            data.ForEach(x =>
+                x.Car = _appDbContext.Cars.Include(x => x.RentalStore).FirstOrDefault(p => p.Id == x.CarId)
             );
             return data;
         }

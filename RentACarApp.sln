@@ -15,8 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.Caching", "RentACa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.Redis", "RentACar.Redis\RentACar.Redis.csproj", "{F0F63773-7E83-4B5E-A4AA-83080B024C09}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.Web.MVC", "RentACar.Web.MVC\RentACar.Web.MVC.csproj", "{3A095AA4-AEDD-4931-A08F-D1390018F406}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.WebWithApi", "RentACar.WebWithApi\RentACar.WebWithApi.csproj", "{886AAFF3-CACA-473A-9920-340BAAF233E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2765AA64-28B7-4FAE-829C-9D402C93F90F}"
@@ -30,7 +28,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.WorkerService.Mail
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.Test.WebWithApi", "RentACar.Test.WebWithApi\RentACar.Test.WebWithApi.csproj", "{C4BCE418-DCE6-4DDD-A02D-0652DF5E5DF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Test.API", "RentACar.Test.API\RentACar.Test.API.csproj", "{2D31B1DB-606D-49B5-93F4-5EE9545F3460}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.Test.API", "RentACar.Test.API\RentACar.Test.API.csproj", "{2D31B1DB-606D-49B5-93F4-5EE9545F3460}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,10 +60,6 @@ Global
 		{F0F63773-7E83-4B5E-A4AA-83080B024C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0F63773-7E83-4B5E-A4AA-83080B024C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0F63773-7E83-4B5E-A4AA-83080B024C09}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A095AA4-AEDD-4931-A08F-D1390018F406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A095AA4-AEDD-4931-A08F-D1390018F406}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A095AA4-AEDD-4931-A08F-D1390018F406}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A095AA4-AEDD-4931-A08F-D1390018F406}.Release|Any CPU.Build.0 = Release|Any CPU
 		{886AAFF3-CACA-473A-9920-340BAAF233E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{886AAFF3-CACA-473A-9920-340BAAF233E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{886AAFF3-CACA-473A-9920-340BAAF233E8}.Release|Any CPU.ActiveCfg = Release|Any CPU

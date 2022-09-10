@@ -19,7 +19,7 @@ namespace RentACar.Service.Services
         public CarService(IGenericRepository<Car> repository, IUnitOfWork unitOfWork, ICarRepository carRepository, IMapper mapper) : base(repository, unitOfWork)
         {
             _carRepository = carRepository;
-            _mapper = mapper;
+            _mapper = mapper;            
         }
 
         public Task<Car> GetByIdCarWithFeatureAsync(int id)

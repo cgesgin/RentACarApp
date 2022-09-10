@@ -64,5 +64,12 @@ namespace RentACar.API.Controllers
             var rentalDtos = _mapper.Map<List<RentalWithCarAndCostumerDto>>(rentals.ToList());
             return CreateActionResult(ResponseDto<List<RentalWithCarAndCostumerDto>>.Success(200, rentalDtos));
         }
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetRentalWithCarAndCostumerAsync()
+        {
+            var rentals = await _service.GetRentalWithCarAndCostumerAsync();
+            var rentalDtos = _mapper.Map<List<RentalWithCarAndCostumerDto>>(rentals.ToList());
+            return CreateActionResult(ResponseDto<List<RentalWithCarAndCostumerDto>>.Success(200, rentalDtos));
+        }
     }
 }

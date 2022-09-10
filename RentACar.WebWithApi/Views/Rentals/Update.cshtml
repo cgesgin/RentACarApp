@@ -1,0 +1,46 @@
+﻿@using RentACar.Core.DTOs
+@model RentACar.Core.DTOs.RentalDto
+@{
+    ViewData["Title"] = "Save";
+}
+
+<h1>Save</h1>
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Update" method="post" asp-controller="Rentals" >          
+            <div class="form-group">
+                <div class="form-group">
+                <label asp-for="RentalDate"></label>
+                <input  id="first" type="text"  asp-for="RentalDate" class="form-control"  />
+                <span asp-validation-for="RentalDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReturnDate"></label>
+                <input id="end" type="text" asp-for="ReturnDate" class="form-control"   />
+                <span asp-validation-for="ReturnDate" class="text-danger"></span>
+            </div>
+              <div class="form-group">
+                <label asp-for="DropStoreId"></label>
+                <select asp-for="DropStoreId" asp-items="ViewBag.rentalStores" class="form-control" ></select>
+                <span asp-validation-for="DropStoreId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RentalAmount"></label>
+                <input asp-for="RentalAmount" class="form-control" readonly/>
+                <span asp-validation-for="RentalAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalAmount"></label>
+                <input asp-for="TotalAmount" class="form-control" />
+                <span asp-validation-for="TotalAmount" class="text-danger"></span>
+            </div>
+                <label asp-for="Status"></label>
+                <input id="TotalAmount" asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -25,12 +25,15 @@ namespace RentACar.WebWithApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Save(PaymentDto paymentDto)
         {
+            var rental= await _apiService.GetByIdAsync<RentalDto>($"Rentals/{paymentDto.RentalId}");
             if (ModelState.IsValid)
             {
                 await _apiService.SaveAsync<PaymentDto>("Payments", paymentDto);
+                rental.Status = "paid";
+                await _apiService.UpdateAsync<RentalDto>("Rentals", rental);
                 return Redirect($"~/Rentals/Index");
             }
-            ViewBag.rental = await _apiService.GetByIdAsync<RentalDto>($"Rentals/{paymentDto.RentalId}");
+            ViewBag.rental = rental;
             return View();
         }
 

@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Moq;
-using Moq.Protected;
-using RentACar.Core.DTOs;
-using RentACar.Core.Models;
+using RentACar.Core.DTOs; 
 using RentACar.WebWithApi.Controllers;
 using RentACar.WebWithApi.Service;
 

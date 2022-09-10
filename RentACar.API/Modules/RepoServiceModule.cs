@@ -43,7 +43,7 @@ namespace RentACar.API.Modules
 
             // Open The Caching
             //builder.RegisterType<CostumerCachingService>().As<ICostumerService>();
-            builder.RegisterType<CarCachingService>().As<ICarService>();
+            //builder.RegisterType<CarCachingService>().As<ICarService>();
 
             // Open The Redis
             //builder.RegisterType<CostumerRedisService>().As<ICostumerService>();

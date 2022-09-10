@@ -10,5 +10,6 @@ namespace RentACar.Core.Services
     public interface IRentalService : IService<Rental>
     {
         Task<List<Rental>> GetByUserIdWithCarAndCostumerAsync(string userId);
+        Task<List<Rental>> GetRentalWithCarAndCostumerAsync();
     }
 }

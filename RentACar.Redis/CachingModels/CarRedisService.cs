@@ -133,6 +133,7 @@ namespace RentACar.Redis.CachingModels
             {
                 _cache.GetDb(0).KeyDelete(CachingCarKey);
             }
+
             foreach (var item in _repository.GetCarWithFeatureAsync().Result.ToList())
             {
                 string jsonEntities = JsonConvert.SerializeObject(item, Formatting.None,

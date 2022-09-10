@@ -19,10 +19,18 @@ namespace RentACar.WebWithApi.Controllers
             _userManager = userManager;
         }
 
+
         public async Task<IActionResult> Index()
         {
             var user = _userManager.FindByNameAsync(User.Identity.Name).Result;
-            var rentals= await _apiService.GetAllAsync<RentalWithCarAndCostumerDto>($"Rentals/GetByUserIdWithCarAndCostumer/{user.Id}");
+            var rentals = await _apiService.GetAllAsync<RentalWithCarAndCostumerDto>($"Rentals/GetByUserIdWithCarAndCostumer/{user.Id}");
+            return View(rentals);
+        }
+
+        [Authorize(Roles ="Admin")]
+        public async Task<IActionResult> AdminIndex()
+        {
+            var rentals = await _apiService.GetAllAsync<RentalWithCarAndCostumerDto>($"Rentals/GetRentalWithCarAndCostumer");
             return View(rentals);
         }
 
@@ -33,10 +41,11 @@ namespace RentACar.WebWithApi.Controllers
             ViewBag.rentalStores = new SelectList(rentalStores, "Id", "Name");
             return View();
         }
- 
+
         [HttpPost]
         public async Task<IActionResult> Save(RentalWithCostumerDto rentalWithCostumerDto)
         {
+            var car = await _apiService.GetByIdAsync<CarWithFeatureDto>($"Cars/GetByIdCarWithFeature/{rentalWithCostumerDto.CarId}");
             if (ModelState.IsValid)
             {
                 var user = _userManager.FindByNameAsync(User.Identity.Name).Result;
@@ -44,12 +53,36 @@ namespace RentACar.WebWithApi.Controllers
                 var costumer = await _apiService.SaveAsync<CostumerDto>("Costumers", rentalWithCostumerDto.Costumer);
                 rentalWithCostumerDto.CostumerId = costumer.Id;
                 var rental = await _apiService.SaveAsync<RentalDto>("Rentals", rentalWithCostumerDto);
+                car.Status = "rented";
+                await _apiService.UpdateAsync<CarDto>("Cars", car);
                 return Redirect($"~/Payments/Save/{rental.Id}");
             }
-            ViewBag.car = await _apiService.GetByIdAsync<CarWithFeatureDto>($"Cars/GetByIdCarWithFeature/{rentalWithCostumerDto.CarId}");
+            ViewBag.car = car;
             var rentalStores = await _apiService.GetAllAsync<RentalStoreDto>("RentalStores");
             ViewBag.rentalStores = new SelectList(rentalStores, "Id", "Name");
             return View();
         }
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Update(int? id)
+        {
+            var rental = await _apiService.GetByIdAsync<RentalDto>($"Rentals/{id}");
+            var rentalStores = await _apiService.GetAllAsync<RentalStoreDto>("RentalStores");
+            ViewBag.rentalStores = new SelectList(rentalStores, "Id", "Name");
+            return View(rental);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public async Task<IActionResult> Update(RentalDto rentalDto)
+        {
+            if (ModelState.IsValid)
+            {
+                await _apiService.UpdateAsync<RentalDto>("Rentals",rentalDto);
+                return Redirect(nameof(AdminIndex));
+            }
+            return View();
+        }
+
     }
 }

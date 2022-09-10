@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+@model List<RentACar.Core.DTOs.DistrictDto>
+<h1>Index</h1>
+ <div>
+        <a asp-action="Save" asp-controller="Districts" class="btn btn-info">Create</a>
+</div>
+<br/>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>CityId</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.CityId</td>
+                <td>
+                    <a asp-action="Update" asp-controller="Districts" asp-route-id="@item.Id" class="btn btn-success">update</a>
+                    <a asp-action="Remove" asp-controller="Districts" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
