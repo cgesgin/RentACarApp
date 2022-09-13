@@ -24,3 +24,10 @@
 * InMemory Cache
 * MySql
 * XUnit
+
+### Projede Kullanılan Kütüphaneler
+
+* Autofac
+* Identity Server
+* FluentValidation
+* Swagger
